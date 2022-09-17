@@ -10,7 +10,7 @@ If you want to run this test on RTL, remember to specify the platform which is g
 There are several flags useful to activate some functionalities:
 
 - `cores=N_CORES` set the number of cores used for the execution to `N_CORES`, by default `cores=1`
-- `fmt=FP_FMT` specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` `FP16ALT` format
+- `fmt=FP_FMT` specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` and `FP16ALT` formats
 - `vec=1` activates vectorial format **only for half-precision floating point (FP16 and FP16ALT)**
 - `check=1` activates results checking
 - `verbose=1` activates wrong results printing
@@ -26,6 +26,6 @@ If you want to run the golden model and re-generate data, you can use the [data_
 - Based on your dataset, you can define input_size and features. There is a dataset in [dataset](./dataset) folder contains 17695 data with 8 features.
 - specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` and `FP16ALT` formats. Also, you can run the mixed-precision golden model by using --float_type=FP**,FP** (input, output).
 - MAC_flag is used to emulate the multiply-and-add operator available on most DSP instruction sets for embedded devices. It can be true or false. To emulate FP16 and FP16ALT behavior on PULP, true this flag.
-- vector flag to emulate SIMD vector instructions. It can be true or false. **WARNING: based on the C code, false this flag for this application.
+- vector flag to emulate SIMD vector instructions. It can be true or false. **WARNING: based on the C code, false this flag for this application.**
 
 The script will generate floating-point data and a reference output of format `fmt` (FP32/FP16/FP16ALT):
