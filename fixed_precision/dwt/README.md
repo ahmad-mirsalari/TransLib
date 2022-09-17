@@ -1,6 +1,6 @@
 # DWT test
 This test performs a DWT (Discrete Wavelet Transformation).
-In this folder you can find pre-generated golden models for FP32 and FP16ALT formats.
+In this folder you can find golden model and optimized c code for FP32, FP16, and FP16ALT formats.
 
 ## Running a test
 After the platform and the SDK setup you can run the test:
@@ -13,12 +13,28 @@ If you want to run this test on RTL, remember to specify the platform which is g
 There are several flags useful to activate some functionalities:
 
 - `cores=N_CORES` set the number of cores used for the execution to `N_CORES`, by default `cores=1`
-- `fmt=FP_FMT` specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` format
-- `vec=1` activates vectorial format **only for half-precision floating point (FP16)**
+- `fmt=FP_FMT` specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` and `FP16ALT` formats
+- `vec=1` activates vectorial format  for FP16 and FP16ALT
 - `check=1` activates results checking
 - `verbose=1` activates wrong results printing
+- `PRINT_RESULTS=1` print outputs of C code
+- `stats=1` activates performance measurement
 
-** WARNING: don't deactivate statistics!! ** Without statistics on, the correct functional behaviour is not guaranteed.
 
-** FP16 format doesn't work on RTL for this test on RTL**
-** FP16ALT format doesn't work on gvsoc for this test**
+## Running the golden model
+If you want to run the golden model and re-generate data, you can use the [data_generator.py](./data_generator.py) script with the following command:
+
+~~~~~shell
+./data_generator.py --IMG_WIDTH=length --FILT_WIN=fw --STRIDE=stride --PADDING=padding --float_type=fmt 
+python3 data_generator.py --input_size=INPUT_SIZE --levels=LEVELS --mode=MODE --float_type=FP** --MAC_flag=MAC_FLAG --vec_flag=VEC_FLAG
+~~~~~
+- to define  --'mode' check https://pywavelets.readthedocs.io/en/latest/regression/wavelet.html 
+- specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` and `FP16ALT` formats. Also, you can run the mixed-precision golden model by using --float_type=FP**,FP**,FP** (input, filter, output).
+- 
+
+The script will generate three floating-point array of format `fmt` (FP32/FP16/FP16ALT) in fp'fmt'_ref.h:
+- input In_Img
+- Filter_Kern
+
+And generate a floating-point array as reference output
+- ref reference output
