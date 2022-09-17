@@ -32,8 +32,8 @@ These are the developed tests:
 
 - [Matrix Multiplication test](./mixed_precision/matmul/) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
 - [Convolution test](./mixed_precision/convolution/) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
-- [DWT test](./fixed_precision/DWT) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
-- [FFT test](./fixed_precision/FFT) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
+- [DWT test](./fixed_precision/dwt) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
+- [FFT test](./fixed_precision/fft) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
 - [FIR filter test](./mixed_precision/fir) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
 - [K-means algorithm test](./fixed_precision/kmeans) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
 - [SVM classification test](./mixed_precision/SVM/) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
