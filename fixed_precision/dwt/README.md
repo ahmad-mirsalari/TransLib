@@ -13,7 +13,7 @@ make clean all [platform=rtl] run
 If you want to run this test on RTL, remember to specify the platform which is gvsoc by default.
 There are several flags useful to activate some functionalities:
 
-- `cores=N_CORES` set the number of cores used for the execution to `N_CORES`, by default `cores=1`
+- `cores=N_CORES` set the number of cores used for the execution to `N_CORES`, by default `cores=1`. There is also the ability to run on the Fabric controller by using `FABRIC=1` instead of `cores=N_CORE`.
 - `fmt=FP_FMT` specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` and `FP16ALT` formats
 - `vec=1` activates vectorial format  for FP16 and FP16ALT
 - `check=1` activates results checking
