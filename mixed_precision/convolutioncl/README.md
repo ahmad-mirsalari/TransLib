@@ -20,7 +20,7 @@ There are several flags useful to activate some functionalities:
 - `stats=1` activates performance measurement
 - `PRINT_RESULTS=1` print outputs of C code
 
-- **for Vectorization, there are only optimized C functions for FILT_WIN = 3 and FILT_WIN = 5. But you can easily copy one of this functions and make some minor changes to supprt your desired filter size. It should be mentioned that for non-vectorized version there is no restriction on the Filter size.**
+- **for Vectorization, there are only optimized C functions for FILT_WIN = 3 and FILT_WIN = 5. But you can easily copy one of this functions and make some minor changes to support your desired filter size. It should be mentioned that for non-vectorized version there is no restriction on the Filter size.**
 
 ## Generating the golden model
 If you want to re-generate a golden model, you can use the [data_generator.py](./data_generator.py) script with the following command:
