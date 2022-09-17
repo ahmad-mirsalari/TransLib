@@ -18,6 +18,22 @@ There are several flags useful to activate some functionalities:
 - `check=1` activates results checking
 - `verbose=1` activates wrong results printing
 
-** WARNING: don't deactivate statistics!! ** Without statistics on, the correct functional behaviour is not guaranteed.
 
-** [TODO]: writing a golden model generator script **
+## Generating the golden model
+If you want to re-generate a golden model, you can use the [data_generator.py](./data_generator.py) script with the following command:
+
+~~~~~shell
+./data_generator.py --LENGTH=length --ORDER=order --float_type=fmt
+~~~~~
+
+The script will generate three floating-point array of format `fmt` (FP32/FP16/FP16ALT) in fp'fmt'_ref.h:
+- UnitImpulse[length] input array
+- Filter0[order] filter array
+- Buffer0[length-order] output array
+
+And generate a floating-point array as reference output in out'fmt'_ref.h
+- check[length-order] reference output
+
+The generated header file will be written in the [references](./references) folder.
+
+** WARNING: don't deactivate statistics!! ** Without statistics on, the correct functional behaviour is not guaranteed.
