@@ -1,0 +1,140 @@
+golden-models
+fir: python3 data_generator.py --LENGTH=512 --ORDER=100 --float_type=FP16ALT --MAC_flag="true" --vec_flag="true"
+
+CONV: python3 data_generator.py --IMG_WIDTH=64 --FILT_WIN=3 --STRIDE=1 --PADDING=same --float_type=FP16 --MAC_flag=true --vec_flag=true
+
+MATMUL: python3 data_generator.py --M=10 --N=20 --P=20 --float_type=FP16 --MAC_flag=true
+
+SVM : python3 data_generator.py --kernel=linear --dataset=cancer --input_size=100 --MAC_flag=true --float_type=FP32
+
+dwt: python3 data_generator.py --input_size=256 --levels=4 --mode=db1 --float_type=FP16 --MAC_flag=true --vec_flag=true
+
+kmeans: python3 data_generator.py --input_size=128 --features=8 --num_clusters=10 --MAC_flag=false --vec_flag=true --float_type=FP16
+
+fft: python3 data_generator.py --input_size=512 --MAC_flag=true --vec_flag=true --float_type=FP16
+
+
+
+
+mixed_precision c code:
+
+CONV:
+
+	Golden Model:
+
+		python3 data_generator.py --IMG_WIDTH=64 --FILT_WIN=3 --STRIDE=1 --PADDING=same --float_type=FP16,FP16,FP16 --MAC_flag=true --vec_flag=true
+
+	c:
+			make clean all run check=1 stats=1 verbose=1 fmt_INP=FP16 fmt_FIL=FP16 fmt_OUT=FP32 cores=1
+
+		or use this command for fixed precision:
+			make clean all run check=1 stats=1 verbose=1 fmt=FP32 cores=1
+
+	MEMORY:
+	size BUILD/PULP/GCC_RISCV/fp_conv/fp_conv
+
+
+matmul:
+
+	Golden Model:
+		python3 data_generator.py --M=10 --N=20 --P=20 --float_type=FP16 --MAC_flag=true
+
+	c:
+		make clean all run check=1 stats=1 verbose=1 fmt_A=FP16 fmt_B=FP16 fmt_OUT=FP16 cores=1 vec=1 PRINT_RESULTS=1
+
+		or 
+		
+		make clean all run check=1 stats=1 verbose=1 fmt=FP32 cores=1
+
+
+
+fir:
+
+	Golden Model:
+
+		python3 data_generator.py --LENGTH=512 --ORDER=100 --float_type=FP16ALT --MAC_flag=true --vec_flag=true
+
+	c:
+			make clean all run check=1 stats=1 verbose=1 fmt_INP=FP16 fmt_FIL=FP16 fmt_OUT=FP32 cores=1
+
+		or use this command for fixed precision:
+			make clean all run check=1 stats=1 verbose=1 fmt=FP32 cores=1
+
+	memory:
+		size BUILD/PULP/GCC_RISCV/fir/fir
+
+
+		use this one: 
+		objdump -h BUILD/PULP/GCC_RISCV/fir/fir
+
+
+		17 .l2_data      000009b8  1c010000  1c010000  00007000  2**2
+                  CONTENTS, ALLOC, LOAD, CODE
+
+
+
+ 
+ 		19 .l1cluster_g  00002008  1000001c  1c0109d0  0000801c  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+
+svm:
+
+	Golden Model:
+
+		python3 data_generator.py --kernel=linear --dataset=cancer --input_size=100 --MAC_flag=true --float_type=FP32
+	c:
+			make clean all run check=1 stats=1 verbose=1 fmt_INP=FP16 fmt_FIL=FP16 fmt_OUT=FP32 cores=1
+
+		or use this command for fixed precision:
+			make clean all run check=1 stats=1 verbose=1 fmt=FP32 cores=1
+
+	memory:
+		size BUILD/PULP/GCC_RISCV/svm/svm
+
+
+		use this one: 
+		objdump -h BUILD/PULP/GCC_RISCV/svm/svm
+
+
+kmeans:
+
+	Golden Model:
+		python3 data_generator.py --input_size=128 --features=8 --num_clusters=8 --MAC_flag=false --vec_flag=false --float_type=FP16
+	
+	C code:
+		make clean all run check=1 stats=1 verbose=1  PRINT_RESULTS=1 fmt=FP16  cores=1
+
+		objdump -h BUILD/PULP/GCC_RISCV/kmeans/kmeans
+
+
+
+dwt:
+	Golden Model:
+		python3 data_generator.py --input_size=500 --levels=4 --mode=sym4 --float_type=FP16 --MAC_flag=true --vec_flag=true
+
+	C code:
+
+		make clean all run check=1 stats=1 verbose=1  PRINT_RESULTS=1 fmt=FP32 cores=1
+
+	memory:
+		size BUILD/PULP/GCC_RISCV/dwt/dwt
+
+
+		use this one: 
+		objdump -h BUILD/PULP/GCC_RISCV/dwt/dwt
+
+fft:
+
+	Golden Model:
+		python3 data_generator.py --input_size=512 --MAC_flag=true --vec_flag=true --float_type=FP16
+
+	C code:
+
+		make clean all run check=1 stats=1 verbose=1  PRINT_RESULTS=1 fmt=FP32 CORES=1
+
+	memory:
+		size BUILD/PULP/GCC_RISCV/test/test
+
+
+		use this one: 
+		objdump -h BUILD/PULP/GCC_RISCV/test/test
