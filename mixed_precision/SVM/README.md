@@ -29,8 +29,8 @@ If you want to run the golden model and re-generate data, you can use the [data_
 - Based on your dataset, you can define input_size. There are two dataset in [dataset](./dataset) folder contains bill_authentication and cancer dataset with different input size and number of features.
 - kernel can be linear or rbf.
 - specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` and `FP16ALT` formats. **Also, you can run the mixed-precision golden model by using `--float_type=FP_INP,FP_FIL,FP_OUT` (input,filter,output).**
-- MAC_flag is used to emulate the multiply-and-add operator available on most DSP instruction sets for embedded devices. It can be true or false. To emulate `FP16` and `FP16ALT` behavior on PULP, true this flag.
-- vector flag to emulate SIMD vector instructions. It can be true or false. To emulate vectorized `FP16` and `FP16ALT` behavior on PULP, true this flag.
+- `MAC_flag` is used to emulate the multiply-and-add operator available on most DSP instruction sets for embedded devices. It can be true or false. To emulate `FP16` and `FP16ALT` behavior on PULP, true this flag.
+- `vec_flag` to emulate SIMD vector instructions. It can be true or false. To emulate vectorized `FP16` and `FP16ALT` behavior on PULP, true this flag.
 
 The script will generate floating-point data and a reference output of format `fmt` (FP32/FP16/FP16ALT):
 
