@@ -24,8 +24,8 @@ If you want to run the golden model and re-generate data, you can use the [data_
 ./data_generator.py --input_size=INPUT_SIZE --features=8 --num_clusters=8 --float_type=FP** --MAC_flag=MAC_FLAG --vec_flag=VEC_FLAG
 ~~~~~
 - Based on your dataset, you can define input_size and features. There is a dataset in [dataset](./dataset) folder contains 17695 data with 8 features.
-- specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` and `FP16ALT` formats. Also, you can run the mixed-precision golden model by using --float_type=FP**,FP** (input, output).
-- MAC_flag is used to emulate the multiply-and-add operator available on most DSP instruction sets for embedded devices. It can be true or false. To emulate FP16 and FP16ALT behavior on PULP, true this flag.
-- vector flag to emulate SIMD vector instructions. It can be true or false. **WARNING: based on the C code, false this flag for this application.**
+- specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` and `FP16ALT` formats.Also, you can run the mixed-precision golden model by using `--float_type=FP_INP,FP_OUT` (input,output).** But consider that The C code only supports fixed-precision.**
+- `MAC_flag` is used to emulate the multiply-and-add operator available on most DSP instruction sets for embedded devices. It can be true or false. To emulate `FP16` and `FP16ALT` behavior on PULP, true this flag.
+- `vec_flag` to emulate SIMD vector instructions. It can be true or false. To emulate vectorized `FP16` and `FP16ALT` behavior on PULP, true this flag. **WARNING: based on the C code, false this flag for this application.**
 
 The script will generate floating-point data and a reference output of format `fmt` (FP32/FP16/FP16ALT):
