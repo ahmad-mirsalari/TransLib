@@ -13,7 +13,7 @@ If you want to run this test on RTL, remember to specify the platform which is g
 There are several flags useful to activate some functionalities:
 
 - `cores=N_CORES` set the number of cores used for the execution to `N_CORES`, by default `cores=1`
-- `fmt=FP_FMT` specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` or `FP16ALT` formats. **For this application you can use mixed-precision in the C code by using fmt_A=FP_FMT_A fmt_B=FP_FMT_B fmt_OUT=FP_FMT_OUT.**
+- `fmt=FP_FMT` specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` or `FP16ALT` formats. **For this application you can use mixed-precision in the C code by using fmt_A=FP_A fmt_B=FP_B fmt_OUT=FP_OUT.**
 - `vec=1` activates vectorial format **only for half-precision floating point (FP16 and FP16ALT)**
 - `check=1` activates the result check
 - `verbose=1` prints the wrong results
