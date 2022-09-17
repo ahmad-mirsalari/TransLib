@@ -26,13 +26,14 @@ source configs/pulp-open.sh
 ~~~~~
 
 ## Repository organization
-In this repository there are some of the most common applications which exploit floating-point numbers. Each folder contains a specific test with the golden model generator and a brief description of how to run the test.
+In this repository there are some of the most common applications which exploit floating-point numbers. Each folder contains a specific test with the golden model generator and a brief description of how to run the test. 
+Since some kernels don't support mixed-precision in current version, we have divided the kernels to [fixed-precision test ](./fixed-precision/) and [mixed-precision test](./mixed-precision/).
 These are the developed tests:
 
-- [Matrix Multiplication test](./matmul/) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
-- [Convolution test](./convolution/) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
-- [DWT test](./DWT) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
-- [FFT test](./FFT) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
-- [FIR filter test](./fir) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
-- [K-means algorithm test](./kmeans) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
-- [SVM classification test](./SVM/) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
+- [Matrix Multiplication test](./mixed-precision/matmul/) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
+- [Convolution test](./mixed-precision/convolution/) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
+- [DWT test](./fixed-precision/DWT) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
+- [FFT test](./fixed-precision/FFT) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
+- [FIR filter test](./mixed-precision/fir) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
+- [K-means algorithm test](./fixed-precision/kmeans) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
+- [SVM classification test](./mixed-precision/SVM/) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
