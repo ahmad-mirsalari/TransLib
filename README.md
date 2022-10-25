@@ -27,7 +27,10 @@ source configs/pulp-open.sh
 ## Repository organization
 In this repository there are some of the most common applications which exploit floating-point numbers. Each folder contains a specific test with the golden model generator and a brief description of how to run the test.  
 The following packages needed to be installed:
+~~~~~shell
 pip install pandas torch matplotlib pywavelets scipy
+~~~~~
+
 Since some kernels don't support mixed-precision in current version, we have divided the kernels to [fixed-precision test ](./fixed_precision/) and [mixed-precision test](./mixed_precision/).
 These are the developed tests:
 
