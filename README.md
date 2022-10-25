@@ -2,7 +2,6 @@
 This repository contains a set of kernel for the PULP cluster or FABRIC.
 We performed a comparative analysis of seven standard kernels used in IoT end-node processing to evaluate our proposed method.
 
-
 ## Setup
 These tests requires the [PULP-SDK](https://github.com/pulp-platform/pulp-sdk). Once you cloned the PULP-SDK repository and you have the [RISC-V GNU Compiler Toolchain](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain) installed,
 
@@ -26,7 +25,9 @@ source configs/pulp-open.sh
 ~~~~~
 
 ## Repository organization
-In this repository there are some of the most common applications which exploit floating-point numbers. Each folder contains a specific test with the golden model generator and a brief description of how to run the test. 
+In this repository there are some of the most common applications which exploit floating-point numbers. Each folder contains a specific test with the golden model generator and a brief description of how to run the test.  
+The following packages needed to be installed:
+pip install pandas torch matplotlib pywavelets scipy
 Since some kernels don't support mixed-precision in current version, we have divided the kernels to [fixed-precision test ](./fixed_precision/) and [mixed-precision test](./mixed_precision/).
 These are the developed tests:
 
