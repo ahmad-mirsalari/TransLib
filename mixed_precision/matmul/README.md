@@ -25,11 +25,10 @@ There are several flags useful to activate some functionalities:
 If you want to re-generate a golden model, you can use the [data_generator.py](./data_generator.py) script with the following command:
 
 ~~~~~shell
-./data_generator.py --M=m --N=n --P=p --float_type=fmt --MAC_flag=MAC_FLAG --vec_flag=VEC_FLAG
+./data_generator.py --M=m --N=n --P=p --float_type=fmt --MAC_flag=MAC_FLAG
 ~~~~~
 - specifies the floating-point format for data, by deafult it is set to `FP32` but you can also choose `FP16` and `FP16ALT` formats. **Also, you can run the mixed-precision golden model by using `--float_type=FP_A,FP_B,FP_OUT`.**
 - `MAC_flag` is used to emulate the multiply-and-add operator available on most DSP instruction sets for embedded devices. It can be true or false. To emulate `FP16` and `FP16ALT` behavior on PULP, true this flag.
-- `vec_flag` to emulate SIMD vector instructions. It can be true or false. To emulate vectorized `FP16` and `FP16ALT` behavior on PULP, true this flag.
 
 The script will generate three floating-point matrices fo format `fmt` (FP32/FP16/FP16ALT):
 - A_mat[m,n] input matrix
