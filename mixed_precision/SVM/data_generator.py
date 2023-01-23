@@ -164,7 +164,7 @@ def svmTrain(X, Y, C, kernelFunction, tol=1e-3, max_passes=5, args=()):
     return model
 
 
-def matrix_mult(Xs, Ys, dt, mac_flag, vec_flag, cast_flag):
+def matrix_mult(Xs, Ys, dt, mac_flag, vec_flag, cast_flag, cast_to):
     Rs = torch.zeros((Xs.shape[0], Ys.shape[1]), dtype=dt)
 
     if vec_flag =="false":
@@ -182,9 +182,13 @@ def matrix_mult(Xs, Ys, dt, mac_flag, vec_flag, cast_flag):
                         a = a.type(torch.float32)
                         b = b.type(torch.float32)
                         temp = temp.type(torch.float32)
-                    elif cast_flag == "true":
-                        a = a.type(torch.float16)
-                        b = b.type(torch.float16)
+                    if cast_flag == "true":
+                        if cast_to == "FP16":
+                            a = a.type(torch.float16)
+                            b = b.type(torch.float16)
+                        elif cast_to == "FP16ALT":
+                            a = a.type(torch.bfloat16)
+                            b = b.type(torch.bfloat16)
                     temp += a * b
                     if mac_flag == "true":
                         temp = temp.type(dt)
@@ -229,7 +233,7 @@ def matrix_mult(Xs, Ys, dt, mac_flag, vec_flag, cast_flag):
     return Rs
 
 
-def svmPredict(model, X, dt, mac_flag,vec_flag, cast_flag):
+def svmPredict(model, X, dt, mac_flag,vec_flag, cast_flag, cast_to):
     """
     Returns a vector of predictions using a trained SVM model.
     Parameters
@@ -254,7 +258,7 @@ def svmPredict(model, X, dt, mac_flag,vec_flag, cast_flag):
         # we can use the weights and bias directly if working with the linear kernel
         # p = np.dot(X, model['w']) + model['b']
 
-        pred = matrix_mult(X, model['w'], dt, mac_flag,vec_flag, cast_flag)  + model['b']
+        pred = matrix_mult(X, model['w'], dt, mac_flag,vec_flag, cast_flag, cast_to)  + model['b']
 
     elif model['kernelFunction'] == 'gaussianKernel':
         expont = torch.tensor(2.71828182845904)
@@ -268,7 +272,7 @@ def svmPredict(model, X, dt, mac_flag,vec_flag, cast_flag):
                 temp = -temp * model['sigma']
                 
                 K[i, j] = expont ** temp  # torch.exp(-temp)
-        pred = matrix_mult(K, model['w'], dt, mac_flag,vec_flag, cast_flag) + model['b']
+        pred = matrix_mult(K, model['w'], dt, mac_flag,vec_flag, cast_flag, cast_to) + model['b']
 
     pred[pred >= 0] = 1
     pred[pred < 0] = 0
@@ -502,13 +506,14 @@ def main():
                  'b': bias,
                  'w': weight}
         # predict x_test
-        y_pred_fp32 = svmPredict(param, x_test, dt=torch.float32, mac_flag="false", vec_flag="false", cast_flag="false")
+        y_pred_fp32 = svmPredict(param, x_test, dt=torch.float32, mac_flag="false", vec_flag="false", cast_flag="false", cast_to="false")
         acc_fp32 = torch.sum(y_test == y_pred_fp32) / y_test.shape[0]
         print("Accuracy of Linear in FP32 data-type:", acc_fp32.item())
 
         # set the data types based on the parser input
         datatypes = select_dtypes(bits, 3)
         cast_flag = check_cast(datatypes[0:2])
+        cast_to = "FP16ALT"
         # change the datatypes
         x_test = matrix_init(x_test, dt=datatypes[0])
         w = matrix_init(weight, dt=datatypes[1])
@@ -517,7 +522,7 @@ def main():
         param = {'kernelFunction': 'linearKernel',
                  'b': b,
                  'w': w}
-        y_pred = svmPredict(param, x_test, dt=datatypes[2], mac_flag=mac_flag, vec_flag=vec_flag, cast_flag=cast_flag)
+        y_pred = svmPredict(param, x_test, dt=datatypes[2], mac_flag=mac_flag, vec_flag=vec_flag, cast_flag=cast_flag, cast_to=cast_to)
         acc_fp = torch.sum(y_test == y_pred) / y_test.shape[0]
         print("Accuracy of Linear in the desired data-type:", acc_fp.item())
         x_ref = torch.zeros((1, 1), dtype=torch.float16)
@@ -551,13 +556,14 @@ def main():
                  'b': bias,
                  'w': weight,
                  'sigma': sigma}
-        y_pred_fp32 = svmPredict(param, x_test, dt=torch.float32, mac_flag="false",vec_flag="false", cast_flag="false")
+        y_pred_fp32 = svmPredict(param, x_test, dt=torch.float32, mac_flag="false",vec_flag="false", cast_flag="false", cast_to="false")
         acc_fp32 = torch.sum(y_test == y_pred_fp32) / y_test.shape[0]
         print("Accuracy of Linear in FP32 data-type:", acc_fp32.item())
 
         # set the data types based on the parser input
         datatypes = select_dtypes(bits, 3)
         cast_flag = check_cast(datatypes[0:2])
+        cast_to = "FP16ALT"
         x_test = matrix_init(x_test, dt=datatypes[0])
         x_ref = matrix_init(x_ref, dt=datatypes[0])
         w = matrix_init(weight, dt=datatypes[1])
@@ -570,7 +576,7 @@ def main():
                  'w': w,
                  'sigma': sigma}
 
-        y_pred = svmPredict(param, x_test, dt=datatypes[2], mac_flag=mac_flag, vec_flag=vec_flag, cast_flag=cast_flag)
+        y_pred = svmPredict(param, x_test, dt=datatypes[2], mac_flag=mac_flag, vec_flag=vec_flag, cast_flag=cast_flag, cast_to=cast_to)
         acc_fp = torch.sum(y_test == y_pred) / y_test.shape[0]
 
         print("Accuracy of RBF in the desired data-type:", acc_fp.item())
