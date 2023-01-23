@@ -1,4 +1,4 @@
-# TransBench
+# TransLib
 This repository contains a set of kernel for the PULP cluster or FABRIC.
 We performed a comparative analysis of seven standard kernels used in IoT end-node processing to evaluate our proposed method.
 
