@@ -51,7 +51,7 @@ def error_metric(ref, res):
     print("RAE is", rae.item())
 
 
-def matrix_mult(Xs, Ys, dt, mac_flag, cast_flag):
+def matrix_mult(Xs, Ys, dt, mac_flag, cast_flag, cast_to):
     Rs = torch.zeros((Xs.shape[0], Ys.shape[1]), dtype=dt)
     # iterate through rows of X
     for i in range(Xs.shape[0]):
@@ -62,13 +62,17 @@ def matrix_mult(Xs, Ys, dt, mac_flag, cast_flag):
             for k in range(Ys.shape[0]):
                 a = Xs[i][k]
                 b = Ys[k][j]
+                if cast_flag == "true":
+                    if cast_to == "FP16":
+                        a = a.type(torch.float16)
+                        b = b.type(torch.float16)
+                    elif cast_to == "FP16ALT":
+                        a = a.type(torch.bfloat16)
+                        b = b.type(torch.bfloat16)
                 if mac_flag == "true":
                     a = a.type(torch.float32)
                     b = b.type(torch.float32)
                     temp = temp.type(torch.float32)
-                elif cast_flag == "true":
-                    a = a.type(torch.bfloat16)
-                    b = b.type(torch.bfloat16)
                 temp += a * b
                 if mac_flag == "true":
                     temp = temp.type(dt)
@@ -179,16 +183,17 @@ def main():
     B_ref = torch.randn((N, P), dtype=torch.float32)
 
     # calculate reference output
-    ref = matrix_mult(Xs=A_ref, Ys=B_ref, dt=torch.float32, mac_flag=mac_flag, cast_flag="false")
+    ref = matrix_mult(Xs=A_ref, Ys=B_ref, dt=torch.float32, mac_flag=mac_flag, cast_flag="false",cast_to="false")
 
     # set the data types based on the parser input
     datatypes = select_dtypes(bits, 3)
 
     cast_flag = check_cast(datatypes[0:2])
+    cast_to = "FP16ALT"
     A_mat = matrix_init(A_ref, dt=datatypes[0])
     B_mat = matrix_init(B_ref, dt=datatypes[1])
 
-    res = matrix_mult(Xs=A_mat, Ys=B_mat, dt=datatypes[2], mac_flag=mac_flag, cast_flag=cast_flag)
+    res = matrix_mult(Xs=A_mat, Ys=B_mat, dt=datatypes[2], mac_flag=mac_flag, cast_flag=cast_flag, cast_to = cast_to)
 
     error_metric(ref, res)
     save_data_into_hfile(M, N, P, A_mat, B_mat, res)

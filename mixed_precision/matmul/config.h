@@ -78,7 +78,7 @@
 #endif
 
 
-#define THR 0.00004f
+#define THR 0.004f
 #ifdef VECTORIAL
     #if defined(MAFP16) && defined (MBFP16ALT) || defined (MAFP16ALT) && defined (MBFP16) 
         #error "Vecotrization does not work for different data types...!!!" 

@@ -52,9 +52,6 @@ int __attribute ((noinline)) check_result(OUT_TYPE * __restrict__ result) {
     float diff;
     int err = 0;
 
-   float f = 3.14159f;
-
-
     for (int i = 0; i < (M*P); i++) {
       diff = fabs(result[i] - ref[i]);
       if(diff > THR) {
