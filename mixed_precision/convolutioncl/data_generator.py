@@ -39,23 +39,29 @@ def calculate_target_size(Img_Width, Kernel_Width, Stride, P):
     return pixels
 
 
-def mac(img, kernel, dt, mac_flag, vec_flag, cast_flag):
+def mac(img, kernel, dt, mac_flag, vec_flag, cast_flag, cast_to):
     if vec_flag == "false":
         temp = torch.zeros(1, dtype=dt)
         for i in range(img.shape[0]):
             for j in range(img.shape[1]):
                 a = img[i][j]
                 b = kernel[i][j]
+                if cast_flag == "true":
+                    if cast_to == "FP16":
+                        a = a.type(torch.float16)
+                        b = b.type(torch.float16)
+                    elif cast_to == "FP16ALT":
+                        a = a.type(torch.bfloat16)
+                        b = b.type(torch.bfloat16)
                 if mac_flag == "true":
                     a = a.type(torch.float32)
                     b = b.type(torch.float32)
                     temp = temp.type(torch.float32)
-                elif cast_flag == "true":
-                    a = a.type(torch.float16)
-                    b = b.type(torch.float16)
                 temp += a * b
                 if mac_flag == "true":
                     temp = temp.type(dt)
+                # if cast_flag == "true":
+                #     temp = temp.type(dt)
         return temp
     else:
         flag = True
@@ -104,7 +110,7 @@ def mac(img, kernel, dt, mac_flag, vec_flag, cast_flag):
         return temp + temp1
 
 
-def convolve(img, kernel, out_width, dt, Stride, mac_flag, vec_flag, cast_flag):
+def convolve(img, kernel, out_width, dt, Stride, mac_flag, vec_flag, cast_flag, cast_to):
     out_img = torch.zeros((out_width, out_width), dtype=dt)
     tgt_size = out_img.shape[0]
     # To simplify things
@@ -119,7 +125,7 @@ def convolve(img, kernel, out_width, dt, Stride, mac_flag, vec_flag, cast_flag):
                 mat = img[i * Stride:i * Stride + k, j * Stride:j * Stride + k]
                 # Apply the convolution - element-wise multiplication and summation of the result
                 # Store the result to i-th row and j-th column of our convolved_img array
-                out_img[i, j] = mac(mat, kernel, dt, mac_flag, vec_flag, cast_flag)
+                out_img[i, j] = mac(mat, kernel, dt, mac_flag, vec_flag, cast_flag, cast_to)
     else:  # based on the vectorized c code
         # Iterate over the columns
         for j in range(tgt_size):
@@ -130,7 +136,7 @@ def convolve(img, kernel, out_width, dt, Stride, mac_flag, vec_flag, cast_flag):
                 mat = img[i * Stride:i * Stride + k, j * Stride:j * Stride + k]
                 # Apply the convolution - element-wise multiplication and summation of the result
                 # Store the result to i-th row and j-th column of our convolved_img array
-                out_img[i, j] = mac(mat, kernel, dt, mac_flag, vec_flag, cast_flag)
+                out_img[i, j] = mac(mat, kernel, dt, mac_flag, vec_flag, cast_flag, cast_to="false")
     return out_img
 
 
@@ -309,21 +315,20 @@ def main():
 
     elif PADDING == 'valid':
         P = 0
-        OUT_WIDTH = calculate_target_size(
-            Img_Width=IMG_WIDTH,
-            Kernel_Width=FILT_WIN, Stride=STRIDE, P=P
-        )
+        OUT_WIDTH = calculate_target_size(Img_Width=IMG_WIDTH,
+Kernel_Width=FILT_WIN, Stride=STRIDE, P=P )
     # calculate reference output
     ref = convolve(img=input_ref, kernel=filter_ref, dt=torch.float32,
-                   out_width=OUT_WIDTH, mac_flag="false", Stride=STRIDE, vec_flag="false", cast_flag="false")
+                   out_width=OUT_WIDTH, mac_flag="false", Stride=STRIDE, vec_flag="false", cast_flag="false", cast_to="false")
 
     # set the data types based on the parser input
     datatypes = select_dtypes(bits, 3)
     cast_flag = check_cast(datatypes[0:2])
+    cast_to = "FP16"
     input_conv = matrix_init(input_ref, dt=datatypes[0])
     filter_conv = matrix_init(filter_ref, dt=datatypes[1])
     res = convolve(img=input_conv, kernel=filter_conv, dt=datatypes[2],
-                   out_width=OUT_WIDTH, Stride=STRIDE, mac_flag=mac_flag, vec_flag=vec_flag, cast_flag=cast_flag)
+                   out_width=OUT_WIDTH, Stride=STRIDE, mac_flag=mac_flag, vec_flag=vec_flag, cast_flag=cast_flag, cast_to = cast_to)
 
 
     error_metric(ref, res)
