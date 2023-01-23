@@ -29,7 +29,7 @@ def matrix_init(IN, dt):
     return temp
 
 
-def convolve(Xs, Fs, dt, outlen, mac_flag, vec_flag, cast_flag):
+def convolve(Xs, Fs, dt, outlen, mac_flag, vec_flag, cast_flag, cast_to):
     Rs = torch.zeros(outlen, dtype=dt)
     if vec_flag == "false":
         # iterate through rows of X
@@ -45,9 +45,13 @@ def convolve(Xs, Fs, dt, outlen, mac_flag, vec_flag, cast_flag):
                     a = a.type(torch.float32)
                     b = b.type(torch.float32)
                     sum = sum.type(torch.float32)
-                elif cast_flag == "true":
-                    a = a.type(torch.bfloat16)
-                    b = b.type(torch.bfloat16)
+                if cast_flag == "true":
+                    if cast_to == "FP16":
+                        a = a.type(torch.float16)
+                        b = b.type(torch.float16)
+                    elif cast_to == "FP16ALT":
+                        a = a.type(torch.bfloat16)
+                        b = b.type(torch.bfloat16)
                 sum += a * b
                 if mac_flag == "true":
                     sum = sum.type(dt)
@@ -209,17 +213,18 @@ def main():
     filter_ref = torch.randn(ORDER, dtype=torch.float32)
 
     # calculate reference output
-    ref = convolve(Xs=input_ref, Fs=filter_ref, dt=torch.float32, outlen=outlen, mac_flag="false", vec_flag="false", cast_flag="false")
+    ref = convolve(Xs=input_ref, Fs=filter_ref, dt=torch.float32, outlen=outlen, mac_flag="false", vec_flag="false", cast_flag="false", cast_to="false")
 
     # set the data types based on the parser input
     datatypes = select_dtypes(bits, 3)
 
     cast_flag = check_cast(datatypes[0:2])
+    cast_to = "FP16ALT"
     # convert matrices to the desired data types
     input_conv = matrix_init(input_ref, dt=datatypes[0])
     filter_conv = matrix_init(filter_ref, dt=datatypes[1])
 
-    res = convolve(Xs=input_conv, Fs=filter_conv, dt=datatypes[2], outlen=outlen, mac_flag=mac_flag, vec_flag=vec_flag, cast_flag=cast_flag)
+    res = convolve(Xs=input_conv, Fs=filter_conv, dt=datatypes[2], outlen=outlen, mac_flag=mac_flag, vec_flag=vec_flag, cast_flag=cast_flag, cast_to=cast_to)
 
     error_metric(ref, res)
 
