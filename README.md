@@ -15,9 +15,27 @@ pip install pandas torch matplotlib pywavelets scipy
 ~~~~~
 #### PULP-SDK
 These tests requires the [PULP-SDK](https://github.com/pulp-platform/pulp-sdk). Once you cloned the PULP-SDK repository and you have the [RISC-V GNU Compiler Toolchain](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain) installed, you need to compile [GVSOC](https://github.com/pulp-platform/pulp-sdk#gvsoc). **Please refer to the links to correctly setup your working environment.**
+
 Here is my suggestion:
-1-  first 
-Don't forgot to source the file corresponding to the desired configuration before:
+
+1-  First install and compile the [RISC-V GNU Compiler Toolchain](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#risc-v-gnu-compiler-toolchain).
+
+Follow the next steps in the [RISC-V GNU Compiler Toolchain](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#risc-v-gnu-compiler-toolchain) repository.
+
+- [Getting the sources](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#getting-the-sources)
+- [Prerequisites](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#prerequisites)
+- [Installation (Pulp)](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#installation-pulp)
+
+2- install and compile [PULP-SDK](https://github.com/pulp-platform/pulp-sdk#pulp-sdk).
+
+Please follow the next setups in the [PULP-SDK](https://github.com/pulp-platform/pulp-sdk#pulp-sdk) repository
+- [Getting started](https://github.com/pulp-platform/pulp-sdk#getting-started)
+- [GVSoC](https://github.com/pulp-platform/pulp-sdk#gvsoc)
+
+3- Test the installation according to [Test execution](https://github.com/pulp-platform/pulp-sdk#test-execution)
+
+
+**Don't forgot to source the file corresponding to the desired configuration when you want to use the TransLib again** :
 
 ~~~~~shell
 cd pulp-sdk
