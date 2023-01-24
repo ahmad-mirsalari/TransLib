@@ -70,7 +70,8 @@ This work was supported by the [APROPOS](https://projects.tuni.fi/apropos/) proj
 
 
 ## Contributors
-- [Giuseppe Tagliavini](https://github.com/gtagliavini), University of Bologna,[E-mail](giuseppe.tagliavini@unibo.it)
+- [Seyed Ahmad Mirsalari](https://github.com/ahmad-mirsalari), University of Bologna,[E-mail](mailto:seyedahmad.mirsalar2@unibo.it)
+- [Giuseppe Tagliavini](https://github.com/gtagliavini), University of Bologna,[E-mail](mailto:giuseppe.tagliavini@unibo.it)
 
 
 ## 🚀 Contact Me
