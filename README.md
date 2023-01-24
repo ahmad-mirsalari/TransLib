@@ -63,7 +63,7 @@ These are the developed tests:
 - Extend the support to additional FP data types (e.g., different flavors of 8-bit FP types) 
 
 ## License 
- TransLib is released under Apache 2.0, see the [LICENSE]() file in the root of this repository for details.
+ TransLib is released under Apache 2.0, see the [LICENSE](./LICENSE.md) file in the root of this repository for details.
 
 ## Acknowledgements
 This work was supported by the [APROPOS](https://projects.tuni.fi/apropos/) project (g.a. no. 956090), founded by the European Union’s Horizon 2020 research and innovation program. 
