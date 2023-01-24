@@ -71,3 +71,10 @@ This work was supported by the [APROPOS](https://projects.tuni.fi/apropos/) proj
 
 ## Contributors
 - [Giuseppe Tagliavini](https://github.com/gtagliavini), University of Bologna,[E-mail](giuseppe.tagliavini@unibo.it)
+
+
+## 🚀 Contact Me
+- [email](seyedahmad.mirsalar2@unibo.it)
+- [LinkedIn](https://www.linkedin.com/in/ahmad-mirsalari/)
+- [Twitter](https://twitter.com/ahmad_mirsalari)
+- [APROPOS](https://projects.tuni.fi/apropos/news/pr_esr_3/)
