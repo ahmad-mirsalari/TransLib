@@ -74,7 +74,7 @@ This work was supported by the [APROPOS](https://projects.tuni.fi/apropos/) proj
 
 
 ## 🚀 Contact Me
-- [email](seyedahmad.mirsalar2@unibo.it)
+- [Email](mailto:seyedahmad.mirsalar2@unibo.it)
 - [LinkedIn](https://www.linkedin.com/in/ahmad-mirsalari/)
 - [Twitter](https://twitter.com/ahmad_mirsalari)
 - [APROPOS](https://projects.tuni.fi/apropos/news/pr_esr_3/)
