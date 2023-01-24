@@ -14,21 +14,10 @@ These golden models are built on top of PyTorch data types. The following packag
 pip install pandas torch matplotlib pywavelets scipy
 ~~~~~
 #### PULP-SDK
-These tests requires the [PULP-SDK](https://github.com/pulp-platform/pulp-sdk). Once you cloned the PULP-SDK repository and you have the [RISC-V GNU Compiler Toolchain](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain) installed. **Please refer to the links to correctly setup your working environment .**
-
-1. If you want to execute these tests on RTL, source the vsim file from the RTL platform folder
-
-~~~~~shell
-source setup/vsim.sh
-~~~~~
-
-2. Export the path to the toolchain with the following command
-
-~~~~~shell
-export PULP_RISCV_GCC_TOOLCHAIN=<INSTALL_DIR>
-~~~~~
-
-3. Source the file corresponding to the desired configuration:
+These tests requires the [PULP-SDK](https://github.com/pulp-platform/pulp-sdk). Once you cloned the PULP-SDK repository and you have the [RISC-V GNU Compiler Toolchain](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain) installed, you need to compile [GVSOC](https://github.com/pulp-platform/pulp-sdk#gvsoc). **Please refer to the links to correctly setup your working environment.**
+Here is my suggestion:
+1-  first 
+Don't forgot to source the file corresponding to the desired configuration before:
 
 ~~~~~shell
 cd pulp-sdk
