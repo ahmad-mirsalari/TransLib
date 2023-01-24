@@ -55,6 +55,16 @@ These are the developed tests:
 - [K-means algorithm test](./fixed_precision/kmeans) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
 - [SVM classification test](./mixed_precision/SVM/) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
 
+
+## Roadmap
+
+- Expand the library by adding additional kernels 
+
+- Extend the support to additional FP data types (e.g., different flavors of 8-bit FP types) 
+
+## License 
+ TransLib is released under Apache 2.0, see the [LICENSE]() file in the root of this repository for details.
+
 ## Acknowledgements
 This work was supported by the [APROPOS](https://projects.tuni.fi/apropos/) project (g.a. no. 956090), founded by the European Union’s Horizon 2020 research and innovation program. 
 
