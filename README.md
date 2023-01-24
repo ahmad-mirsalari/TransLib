@@ -26,13 +26,13 @@ Follow the next steps in the [RISC-V GNU Compiler Toolchain](https://github.com/
 - [Prerequisites](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#prerequisites)
 - [Installation (Pulp)](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#installation-pulp)
 
-2- install and compile [PULP-SDK](https://github.com/pulp-platform/pulp-sdk#pulp-sdk).
+2- Install and compile [PULP-SDK](https://github.com/pulp-platform/pulp-sdk#pulp-sdk).
 
 Please follow the next setups in the [PULP-SDK](https://github.com/pulp-platform/pulp-sdk#pulp-sdk) repository
 - [Getting started](https://github.com/pulp-platform/pulp-sdk#getting-started)
 - [GVSoC](https://github.com/pulp-platform/pulp-sdk#gvsoc)
 
-3- Test the installation according to [Test execution](https://github.com/pulp-platform/pulp-sdk#test-execution)
+3- Finally, test the installation according to [Test execution](https://github.com/pulp-platform/pulp-sdk#test-execution)
 
 
 **Don't forgot to source the file corresponding to the desired configuration when you want to use the TransLib again** :
