@@ -34,14 +34,14 @@ else
 ifdef fmt_A
 PULP_CFLAGS += -DMA${fmt_A}
 else
-PULP_CFLAGS += -DINFP32
+PULP_CFLAGS += -DMAFP32
 endif
 
 #FILTER DATA TYPE
 ifdef fmt_B
 PULP_CFLAGS += -DMB${fmt_B}
 else
-PULP_CFLAGS += -DFILFP32
+PULP_CFLAGS += -DMBFP32
 endif
 
 # OUTPUT DATA TYPE
