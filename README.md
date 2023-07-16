@@ -1,15 +1,27 @@
 
 # TransLib
-TransLib, an open-source kernel library based on transprecision computing principles, which provides knobs to exploit different FP data types (i.e., float, float16, and bfloat16), also considering the trade-off between homogeneous and mixed-precision solutions. 
+TransLib, an open-source kernel library based on transprecision computing principles, provides knobs to exploit different FP data types (i.e., float, float16, and bfloat16), also considering the trade-off between homogeneous and mixed-precision solutions. 
 
 We demonstrate the capabilities of the proposed library on PULP, a 32-bit microcontroller (MCU) coupled with a parallel, programmable accelerator. We performed a comparative analysis of seven standard kernels used in IoT end-node processing to evaluate our proposed method.
 
+# Reference
+If you use the DORY tool to deploy your models, please make sure to cite our paper: https://ieeexplore.ieee.org/document/9381618 (preprint available also at https://arxiv.org/abs/2008.07127)
 
+@article{burrello2020dory,
+  author={A. {Burrello} and A. {Garofalo} and N. {Bruschi} and G. {Tagliavini} and D. {Rossi} and F. {Conti}},
+  journal={IEEE Transactions on Computers}, 
+  title={DORY: Automatic End-to-End Deployment of Real-World DNNs on Low-Cost IoT MCUs}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TC.2021.3066883}
+}
 ## Get Started
 Each kernel design includes a Python model and a C program. The Python model generates the input dataset, computes the kernel output as a golden reference, and assesses the accuracy using a customizable error metric. Each folder contains a specific test with the golden model generator and a brief description of how to run the test.  
 ### Prerequisites 
 #### Python
-These golden models are built on top of PyTorch data types. The following packages needed to be installed:
+These golden models are built on top of PyTorch data types. The following packages need to be installed:
 ~~~~~shell
 pip install pandas torch matplotlib pywavelets scipy
 ~~~~~
@@ -35,16 +47,16 @@ Please follow the next setups in the [PULP-SDK](https://github.com/pulp-platform
 3- Finally, test the installation according to [Test execution](https://github.com/pulp-platform/pulp-sdk#test-execution)
 
 
-**Don't forgot to source the file corresponding to the desired configuration when you want to use the TransLib again** :
+**Don't forget to source the file corresponding to the desired configuration when you want to use the TransLib again** :
 
 ~~~~~shell
 cd pulp-sdk
 source configs/pulp-open.sh
 ~~~~~
 ## Repository Organization
-In this repository there are some of the most common applications which exploit floating-point numbers. Each folder contains a specific test with the golden model generator and a brief description of how to run the test.  
+Each folder contains a specific test with the golden model generator and a brief description of how to run the test.  
 
-Since some kernels don't support mixed-precision in current version, we have divided the kernels to [fixed-precision test ](./fixed_precision/) and [mixed-precision test](./mixed_precision/).
+Since some kernels don't support mixed-precision in the current version, we have divided the kernels into [fixed-precision test ](./fixed_precision/) and [mixed-precision test](./mixed_precision/).
 These are the developed tests:
 
 - [Matrix Multiplication test](./mixed_precision/matmul/) for FP32, FP16 and FP16ALT with also vectorial format for half-precision floating-point
