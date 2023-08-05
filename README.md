@@ -4,19 +4,25 @@ TransLib, an open-source kernel library based on transprecision computing princi
 
 We demonstrate the capabilities of the proposed library on PULP, a 32-bit microcontroller (MCU) coupled with a parallel, programmable accelerator. We performed a comparative analysis of seven standard kernels used in IoT end-node processing to evaluate our proposed method.
 
-# Reference
-If you use the TransLib, you can cite our paper ([TransLib](https://ieeexplore.ieee.org/abstract/document/10136916)): 
-~~~~~shell
-@INPROCEEDINGS{10136916,
-  author={Mirsalari, Seyed Ahmad and Tagliavini, Giuseppe and Rossi, Davide and Benini, Luca},
-  booktitle={2023 Design, Automation & Test in Europe Conference & Exhibition (DATE)}, 
-  title={TransLib: A Library to Explore Transprecision Floating-Point Arithmetic on Multi-Core IoT End-Nodes}, 
-  year={2023},
-  volume={},
-  number={},
-  pages={1-2},
-  doi={10.23919/DATE56975.2023.10136916}}
-~~~~~
+## Reference
+This library is based on the research outlined in the following paper:
+
+- Mirsalari, S.A., Tagliavini, G., Rossi, D., and Benini, L., "TransLib: A Library to Explore Transprecision Floating-Point Arithmetic on Multi-Core IoT End-Nodes", 2023 Design, Automation & Test in Europe Conference & Exhibition (DATE), 2023, [Link to the paper](https://ieeexplore.ieee.org/abstract/document/10136916)
+
+If you find this library useful in your research, please consider citing the paper:
+
+> ```
+> @INPROCEEDINGS{10136916,
+>   author={Mirsalari, Seyed Ahmad and Tagliavini, Giuseppe and Rossi, Davide and Benini, Luca},
+>   booktitle={2023 Design, Automation & Test in Europe Conference & Exhibition (DATE)},
+>   title={TransLib: A Library to Explore Transprecision Floating-Point Arithmetic on Multi-Core IoT End-Nodes},
+>   year={2023},
+>   volume={},
+>   number={},
+>   pages={1-2},
+>   doi={10.23919/DATE56975.2023.10136916}}
+> ```
+
 ## Get Started
 Each kernel design includes a Python model and a C program. The Python model generates the input dataset, computes the kernel output as a golden reference, and assesses the accuracy using a customizable error metric. Each folder contains a specific test with the golden model generator and a brief description of how to run the test.  
 ### Prerequisites 
@@ -76,24 +82,6 @@ These are the developed tests:
 
 ## License 
  TransLib is released under Apache 2.0, see the [LICENSE](./LICENSE.md) file in the root of this repository for details.
-
-## Reference Paper
-This library is based on the research outlined in the following paper:
-
-- Mirsalari, S.A., Tagliavini, G., Rossi, D., and Benini, L., "TransLib: A Library to Explore Transprecision Floating-Point Arithmetic on Multi-Core IoT End-Nodes", 2023 Design, Automation & Test in Europe Conference & Exhibition (DATE), 2023, [Link to the paper](https://ieeexplore.ieee.org/abstract/document/10136916)
-
-If you find this library useful in your research, please consider citing the paper:
-
-```bibtex
-@INPROCEEDINGS{10136916,
-  author={Mirsalari, Seyed Ahmad and Tagliavini, Giuseppe and Rossi, Davide and Benini, Luca},
-  booktitle={2023 Design, Automation & Test in Europe Conference & Exhibition (DATE)},
-  title={TransLib: A Library to Explore Transprecision Floating-Point Arithmetic on Multi-Core IoT End-Nodes},
-  year={2023},
-  volume={},
-  number={},
-  pages={1-2},
-  doi={10.23919/DATE56975.2023.10136916}}
 
 ## Acknowledgements
 This work was supported by the [APROPOS](https://projects.tuni.fi/apropos/) project (g.a. no. 956090), founded by the European Union’s Horizon 2020 research and innovation program. 
