@@ -1,0 +1,618 @@
+RM  /home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV/
+CC  ../fft_radix2/fft_radix2.c
+../fft_radix2/fft_radix2.c:210:38: warning: always_inline function might not be inlinable [-Wattributes]
+ void __attribute__ ((always_inline)) process_butterfly_last_radix2 (Complex_type* input, Complex_type* output, int outindex ) //uscita
+                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../fft_radix2/fft_radix2.c:173:38: warning: always_inline function might not be inlinable [-Wattributes]
+ void __attribute__ ((always_inline)) process_butterfly_radix2 (Complex_type* input, int twiddle_index, int index, int distance, Complex_type* twiddle_ptr)
+                                      ^~~~~~~~~~~~~~~~~~~~~~~~
+../fft_radix2/fft_radix2.c:146:38: warning: always_inline function might not be inlinable [-Wattributes]
+ void __attribute__ ((always_inline)) process_butterfly_real_radix2 (Complex_type* input, int twiddle_index, int distance, Complex_type* twiddle_ptr) //1^stage
+                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../fft_radix2/fft_radix2.c:130:37: warning: always_inline function might not be inlinable [-Wattributes]
+ int __attribute__ ((always_inline)) bit_rev_radix2(int index_torevert)  //bit reverse total number
+                                     ^~~~~~~~~~~~~~
+../fft_radix2/fft_radix2.c:120:46: warning: always_inline function might not be inlinable [-Wattributes]
+ Complex_type __attribute__ ((always_inline)) complex_mul_real (DTYPE A, Complex_type B)
+                                              ^~~~~~~~~~~~~~~~
+../fft_radix2/fft_radix2.c:57:46: warning: always_inline function might not be inlinable [-Wattributes]
+ Complex_type __attribute__ ((always_inline)) complex_mul (Complex_type A, Complex_type B)
+                                              ^~~~~~~~~~~
+CC  ../fft_radix2/utils.c
+CC  ../fft_radix8/utils.c
+CC  fft_mixed_2_8.c
+In file included from fft_mixed_2_8.c:7:0:
+../fft_radix8/fft_radix8.c:937:38: warning: always_inline function might not be inlinable [-Wattributes]
+ void __attribute__ ((always_inline)) par_fft_radix8 (Complex_type * Inp_signal, Complex_type * Out_signal, int output_index_base)
+                                      ^~~~~~~~~~~~~~
+../fft_radix8/fft_radix8.c:779:38: warning: always_inline function might not be inlinable [-Wattributes]
+ void __attribute__ ((always_inline)) fft_radix8 (Complex_type * Inp_signal, Complex_type * Out_signal, int output_index_base)
+                                      ^~~~~~~~~~
+../fft_radix8/fft_radix8.c:541:38: warning: always_inline function might not be inlinable [-Wattributes]
+ void __attribute__ ((always_inline)) process_butterfly_last_radix8 (Complex_type* input, Complex_type* output, int outindex )
+                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../fft_radix8/fft_radix8.c:312:38: warning: always_inline function might not be inlinable [-Wattributes]
+ void __attribute__ ((always_inline)) process_butterfly_radix8 (Complex_type* input, int twiddle_index, int index, int distance, Complex_type* twiddle_ptr)
+                                      ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from fft_mixed_2_8.c:7:0:
+../fft_radix8/fft_radix8.c:109:38: warning: always_inline function might not be inlinable [-Wattributes]
+ void __attribute__ ((always_inline)) process_butterfly_real_radix8 (Complex_type* input, int twiddle_index, int distance, Complex_type* twiddle_ptr)
+                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../fft_radix8/fft_radix8.c:95:37: warning: always_inline function might not be inlinable [-Wattributes]
+ int __attribute__ ((always_inline)) bit_rev_radix8(int value) //digit reverse
+                                     ^~~~~~~~~~~~~~
+../fft_radix8/fft_radix8.c:76:37: warning: always_inline function might not be inlinable [-Wattributes]
+ int __attribute__ ((always_inline)) bit_rev_2_8(int value)
+                                     ^~~~~~~~~~~
+../fft_radix8/fft_radix8.c:66:53: warning: always_inline function might not be inlinable [-Wattributes]
+ static Complex_type __attribute__ ((always_inline)) complex_mul_real (DTYPE A, Complex_type B)
+                                                     ^~~~~~~~~~~~~~~~
+../fft_radix8/fft_radix8.c:46:53: warning: always_inline function might not be inlinable [-Wattributes]
+ static Complex_type __attribute__ ((always_inline)) complex_mul (Complex_type A, Complex_type B)
+                                                     ^~~~~~~~~~~
+CC  utils.c
+CC  main.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/fll-v1.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/freq-domains.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/pulp/kernel/chips/pulp/soc.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/read_fs/read_fs.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/host_fs/semihost.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/host_fs/host_fs.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/fs.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pmsis/pmsis_bsp/bsp/pulp.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/io.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/fprintf.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/prf.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/sprintf.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/semihost.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/init.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/kernel.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/device.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/task.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/alloc.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/alloc_pool.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/irq.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/soc_event.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/log.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/time.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/pulp/drivers/uart/uart-v1.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/pulp/drivers/udma/udma-v3.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/pulp/drivers/cluster/cluster.c
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/crt0.S
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/irq_asm.S
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/task_asm.S
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/time_asm.S
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/common/kernel/soc_event_v2_itc.S
+CC  /home/ahmad/Desktop/pulp-sdk/rtos/pulpos/pulp/drivers/cluster/pe-eu-v3.S
+LD  /home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV//test/test
+gvsoc --target=pulp-open --work-dir=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV/ --binary=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV//test/test --config-opt=cluster/nb_pe=8      image
+gapy --platform=gvsoc --target-dir=/home/ahmad/Desktop/pulp-sdk/install/workstation/generators --model-dir=/home/ahmad/Desktop/pulp-sdk/install/workstation/models --target=pulp-open --work-dir=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV/ --binary=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV//test/test --config-opt=cluster/nb_pe=8 image
+gvsoc --target=pulp-open --work-dir=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV/ --binary=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV//test/test --config-opt=cluster/nb_pe=8      flash
+gapy --platform=gvsoc --target-dir=/home/ahmad/Desktop/pulp-sdk/install/workstation/generators --model-dir=/home/ahmad/Desktop/pulp-sdk/install/workstation/models --target=pulp-open --work-dir=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV/ --binary=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV//test/test --config-opt=cluster/nb_pe=8 flash
+gvsoc --target=pulp-open --work-dir=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV/ --binary=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV//test/test --config-opt=cluster/nb_pe=8      image flash run
+gapy --platform=gvsoc --target-dir=/home/ahmad/Desktop/pulp-sdk/install/workstation/generators --model-dir=/home/ahmad/Desktop/pulp-sdk/install/workstation/models --target=pulp-open --work-dir=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV/ --binary=/home/ahmad/translib_jr/fixed_precision/fft-memsave/fft_mixed_2_8/BUILD/PULP/GCC_RISCV//test/test --config-opt=cluster/nb_pe=8 image flash run
+[0] cycles = 40922
+[0] instr = 33248
+[0] active cycles = 40897
+[0] ext load = 1
+[0] TCDM cont = 0
+[0] ld stall = 0
+[0] imiss = 7283
+[0] _apu_type  = 0
+[0] _apu_cont  = 0
+[0] _apu_dep  = 0
+[0] _apu_wb  = 0
+Output_Signal[0] = (257.953461, 0.000000	ref=257.953461, 0.000000	r_error =0.000000 	i_error =0.000000 
+Output_Signal[1] = (1.963484, 0.222482	ref=1.963484, 0.222483	r_error =0.000000 	i_error =0.000000 
+Output_Signal[2] = (1.996092, 0.453266	ref=1.996092, 0.453266	r_error =0.000000 	i_error =0.000000 
+Output_Signal[3] = (2.053236, 0.701720	ref=2.053236, 0.701720	r_error =0.000001 	i_error =0.000000 
+Output_Signal[4] = (2.139701, 0.979648	ref=2.139701, 0.979648	r_error =0.000000 	i_error =0.000000 
+Output_Signal[5] = (2.263626, 1.303428	ref=2.263625, 1.303429	r_error =0.000001 	i_error =0.000001 
+Output_Signal[6] = (2.438663, 1.697791	ref=2.438664, 1.697791	r_error =0.000000 	i_error =0.000000 
+Output_Signal[7] = (2.688520, 2.203373	ref=2.688520, 2.203374	r_error =0.000000 	i_error =0.000000 
+Output_Signal[8] = (3.057151, 2.893504	ref=3.057150, 2.893505	r_error =0.000001 	i_error =0.000000 
+Output_Signal[9] = (3.635076, 3.917236	ref=3.635076, 3.917237	r_error =0.000000 	i_error =0.000001 
+Output_Signal[10] = (4.641603, 5.633628	ref=4.641604, 5.633628	r_error =0.000000 	i_error =0.000000 
+Output_Signal[11] = (6.777478, 9.187466	ref=6.777480, 9.187465	r_error =0.000001 	i_error =0.000001 
+Output_Signal[12] = (14.142130, 21.271454	ref=14.142130, 21.271454	r_error =0.000000 	i_error =0.000000 
+Output_Signal[13] = (-62.897636, -104.432304	ref=-62.897644, -104.432304	r_error =0.000008 	i_error =0.000000 
+Output_Signal[14] = (-8.828652, -16.116459	ref=-8.828653, -16.116459	r_error =0.000001 	i_error =0.000000 
+Output_Signal[15] = (-4.492997, -8.989783	ref=-4.492999, -8.989783	r_error =0.000002 	i_error =0.000000 
+Output_Signal[16] = (-2.896856, -6.338506	ref=-2.896854, -6.338505	r_error =0.000001 	i_error =0.000001 
+Output_Signal[17] = (-2.071053, -4.947773	ref=-2.071053, -4.947774	r_error =0.000000 	i_error =0.000000 
+Output_Signal[18] = (-1.568563, -4.087563	ref=-1.568564, -4.087563	r_error =0.000000 	i_error =0.000000 
+Output_Signal[19] = (-1.231982, -3.500661	ref=-1.231984, -3.500662	r_error =0.000003 	i_error =0.000002 
+Output_Signal[20] = (-0.991689, -3.073202	ref=-0.991689, -3.073202	r_error =0.000000 	i_error =0.000000 
+Output_Signal[21] = (-0.812162, -2.746988	ref=-0.812160, -2.746988	r_error =0.000001 	i_error =0.000000 
+Output_Signal[22] = (-0.673374, -2.489155	ref=-0.673375, -2.489155	r_error =0.000000 	i_error =0.000000 
+Output_Signal[23] = (-0.563195, -2.279745	ref=-0.563196, -2.279746	r_error =0.000001 	i_error =0.000000 
+Output_Signal[24] = (-0.473847, -2.105919	ref=-0.473847, -2.105918	r_error =0.000000 	i_error =0.000001 
+Output_Signal[25] = (-0.400116, -1.959038	ref=-0.400116, -1.959039	r_error =0.000000 	i_error =0.000001 
+Output_Signal[26] = (-0.338376, -1.833079	ref=-0.338377, -1.833079	r_error =0.000000 	i_error =0.000000 
+Output_Signal[27] = (-0.286039, -1.723702	ref=-0.286038, -1.723704	r_error =0.000001 	i_error =0.000002 
+Output_Signal[28] = (-0.241192, -1.627711	ref=-0.241193, -1.627710	r_error =0.000001 	i_error =0.000000 
+Output_Signal[29] = (-0.202411, -1.542687	ref=-0.202411, -1.542687	r_error =0.000000 	i_error =0.000000 
+Output_Signal[30] = (-0.168599, -1.466764	ref=-0.168599, -1.466764	r_error =0.000000 	i_error =0.000000 
+Output_Signal[31] = (-0.138910, -1.398495	ref=-0.138909, -1.398496	r_error =0.000001 	i_error =0.000001 
+Output_Signal[32] = (-0.112665, -1.336722	ref=-0.112667, -1.336721	r_error =0.000002 	i_error =0.000001 
+Output_Signal[33] = (-0.089344, -1.280513	ref=-0.089343, -1.280513	r_error =0.000000 	i_error =0.000000 
+Output_Signal[34] = (-0.068503, -1.229112	ref=-0.068504, -1.229112	r_error =0.000000 	i_error =0.000000 
+Output_Signal[35] = (-0.049793, -1.181896	ref=-0.049794, -1.181896	r_error =0.000000 	i_error =0.000000 
+Output_Signal[36] = (-0.032922, -1.138349	ref=-0.032922, -1.138348	r_error =0.000000 	i_error =0.000001 
+Output_Signal[37] = (-0.017650, -1.098034	ref=-0.017650, -1.098034	r_error =0.000001 	i_error =0.000001 
+Output_Signal[38] = (-0.003774, -1.060586	ref=-0.003774, -1.060586	r_error =0.000000 	i_error =0.000000 
+Output_Signal[39] = (0.008874, -1.025694	ref=0.008873, -1.025693	r_error =0.000001 	i_error =0.000000 
+Output_Signal[40] = (0.020442, -0.993085	ref=0.020440, -0.993087	r_error =0.000002 	i_error =0.000002 
+Output_Signal[41] = (0.031049, -0.962539	ref=0.031050, -0.962540	r_error =0.000000 	i_error =0.000001 
+Output_Signal[42] = (0.040805, -0.933849	ref=0.040805, -0.933849	r_error =0.000000 	i_error =0.000000 
+Output_Signal[43] = (0.049798, -0.906839	ref=0.049797, -0.906842	r_error =0.000001 	i_error =0.000002 
+Output_Signal[44] = (0.058110, -0.881364	ref=0.058110, -0.881365	r_error =0.000001 	i_error =0.000000 
+Output_Signal[45] = (0.065807, -0.857285	ref=0.065808, -0.857287	r_error =0.000001 	i_error =0.000003 
+Output_Signal[46] = (0.072951, -0.834484	ref=0.072952, -0.834484	r_error =0.000000 	i_error =0.000000 
+Output_Signal[47] = (0.079596, -0.812855	ref=0.079597, -0.812856	r_error =0.000000 	i_error =0.000001 
+Output_Signal[48] = (0.085788, -0.792309	ref=0.085789, -0.792308	r_error =0.000001 	i_error =0.000000 
+Output_Signal[49] = (0.091565, -0.772753	ref=0.091565, -0.772754	r_error =0.000000 	i_error =0.000001 
+Output_Signal[50] = (0.096968, -0.754120	ref=0.096968, -0.754121	r_error =0.000000 	i_error =0.000001 
+Output_Signal[51] = (0.102030, -0.736338	ref=0.102025, -0.736341	r_error =0.000005 	i_error =0.000003 
+Output_Signal[52] = (0.106768, -0.719355	ref=0.106768, -0.719356	r_error =0.000000 	i_error =0.000001 
+Output_Signal[53] = (0.111225, -0.703106	ref=0.111225, -0.703106	r_error =0.000000 	i_error =0.000000 
+Output_Signal[54] = (0.115417, -0.687541	ref=0.115417, -0.687541	r_error =0.000000 	i_error =0.000000 
+Output_Signal[55] = (0.119361, -0.672619	ref=0.119361, -0.672620	r_error =0.000000 	i_error =0.000000 
+Output_Signal[56] = (0.123085, -0.658297	ref=0.123083, -0.658297	r_error =0.000002 	i_error =0.000001 
+Output_Signal[57] = (0.126596, -0.644539	ref=0.126596, -0.644539	r_error =0.000000 	i_error =0.000000 
+Output_Signal[58] = (0.129916, -0.631308	ref=0.129916, -0.631308	r_error =0.000000 	i_error =0.000000 
+Output_Signal[59] = (0.133057, -0.618570	ref=0.133056, -0.618570	r_error =0.000001 	i_error =0.000000 
+Output_Signal[60] = (0.136032, -0.606301	ref=0.136032, -0.606301	r_error =0.000000 	i_error =0.000000 
+Output_Signal[61] = (0.138853, -0.594472	ref=0.138853, -0.594475	r_error =0.000000 	i_error =0.000002 
+Output_Signal[62] = (0.141528, -0.583054	ref=0.141528, -0.583054	r_error =0.000000 	i_error =0.000000 
+Output_Signal[63] = (0.144071, -0.572031	ref=0.144073, -0.572030	r_error =0.000002 	i_error =0.000001 
+Output_Signal[64] = (0.146486, -0.561383	ref=0.146486, -0.561380	r_error =0.000000 	i_error =0.000003 
+Output_Signal[65] = (0.148790, -0.551073	ref=0.148791, -0.551073	r_error =0.000000 	i_error =0.000000 
+Output_Signal[66] = (0.150981, -0.541102	ref=0.150982, -0.541102	r_error =0.000000 	i_error =0.000000 
+Output_Signal[67] = (0.153069, -0.531446	ref=0.153068, -0.531445	r_error =0.000001 	i_error =0.000001 
+Output_Signal[68] = (0.155063, -0.522089	ref=0.155062, -0.522090	r_error =0.000001 	i_error =0.000001 
+Output_Signal[69] = (0.156964, -0.513017	ref=0.156964, -0.513017	r_error =0.000001 	i_error =0.000000 
+Output_Signal[70] = (0.158781, -0.504216	ref=0.158781, -0.504215	r_error =0.000001 	i_error =0.000000 
+Output_Signal[71] = (0.160519, -0.495671	ref=0.160516, -0.495672	r_error =0.000002 	i_error =0.000001 
+Output_Signal[72] = (0.162179, -0.487373	ref=0.162181, -0.487373	r_error =0.000002 	i_error =0.000001 
+Output_Signal[73] = (0.163771, -0.479308	ref=0.163771, -0.479309	r_error =0.000000 	i_error =0.000000 
+Output_Signal[74] = (0.165295, -0.471467	ref=0.165295, -0.471466	r_error =0.000000 	i_error =0.000000 
+Output_Signal[75] = (0.166755, -0.463840	ref=0.166756, -0.463840	r_error =0.000000 	i_error =0.000001 
+Output_Signal[76] = (0.168157, -0.456416	ref=0.168157, -0.456416	r_error =0.000000 	i_error =0.000001 
+Output_Signal[77] = (0.169500, -0.449188	ref=0.169502, -0.449190	r_error =0.000002 	i_error =0.000002 
+Output_Signal[78] = (0.170792, -0.442147	ref=0.170792, -0.442147	r_error =0.000000 	i_error =0.000000 
+Output_Signal[79] = (0.172032, -0.435285	ref=0.172033, -0.435284	r_error =0.000002 	i_error =0.000000 
+Output_Signal[80] = (0.173225, -0.428594	ref=0.173226, -0.428596	r_error =0.000001 	i_error =0.000001 
+Output_Signal[81] = (0.174370, -0.422068	ref=0.174371, -0.422068	r_error =0.000000 	i_error =0.000000 
+Output_Signal[82] = (0.175474, -0.415700	ref=0.175474, -0.415699	r_error =0.000000 	i_error =0.000000 
+Output_Signal[83] = (0.176537, -0.409484	ref=0.176536, -0.409482	r_error =0.000002 	i_error =0.000001 
+Output_Signal[84] = (0.177557, -0.403413	ref=0.177558, -0.403412	r_error =0.000000 	i_error =0.000001 
+Output_Signal[85] = (0.178543, -0.397482	ref=0.178543, -0.397483	r_error =0.000001 	i_error =0.000001 
+Output_Signal[86] = (0.179494, -0.391685	ref=0.179494, -0.391686	r_error =0.000000 	i_error =0.000000 
+Output_Signal[87] = (0.180410, -0.386020	ref=0.180410, -0.386018	r_error =0.000000 	i_error =0.000001 
+Output_Signal[88] = (0.181292, -0.380476	ref=0.181293, -0.380477	r_error =0.000001 	i_error =0.000001 
+Output_Signal[89] = (0.182147, -0.375056	ref=0.182147, -0.375055	r_error =0.000000 	i_error =0.000002 
+Output_Signal[90] = (0.182972, -0.369750	ref=0.182972, -0.369751	r_error =0.000000 	i_error =0.000001 
+Output_Signal[91] = (0.183767, -0.364556	ref=0.183766, -0.364556	r_error =0.000001 	i_error =0.000001 
+Output_Signal[92] = (0.184538, -0.359470	ref=0.184538, -0.359469	r_error =0.000000 	i_error =0.000000 
+Output_Signal[93] = (0.185282, -0.354491	ref=0.185278, -0.354488	r_error =0.000004 	i_error =0.000003 
+Output_Signal[94] = (0.185999, -0.349607	ref=0.185999, -0.349607	r_error =0.000000 	i_error =0.000000 
+Output_Signal[95] = (0.186695, -0.344821	ref=0.186695, -0.344821	r_error =0.000000 	i_error =0.000000 
+Output_Signal[96] = (0.187365, -0.340129	ref=0.187364, -0.340127	r_error =0.000001 	i_error =0.000002 
+Output_Signal[97] = (0.188020, -0.335529	ref=0.188020, -0.335530	r_error =0.000000 	i_error =0.000000 
+Output_Signal[98] = (0.188651, -0.331016	ref=0.188652, -0.331016	r_error =0.000001 	i_error =0.000000 
+Output_Signal[99] = (0.189264, -0.326588	ref=0.189264, -0.326589	r_error =0.000000 	i_error =0.000001 
+Output_Signal[100] = (0.189855, -0.322240	ref=0.189856, -0.322240	r_error =0.000000 	i_error =0.000001 
+Output_Signal[101] = (0.190431, -0.317972	ref=0.190430, -0.317974	r_error =0.000001 	i_error =0.000002 
+Output_Signal[102] = (0.190988, -0.313782	ref=0.190988, -0.313782	r_error =0.000000 	i_error =0.000000 
+Output_Signal[103] = (0.191528, -0.309666	ref=0.191527, -0.309666	r_error =0.000001 	i_error =0.000000 
+Output_Signal[104] = (0.192052, -0.305623	ref=0.192051, -0.305622	r_error =0.000001 	i_error =0.000001 
+Output_Signal[105] = (0.192562, -0.301648	ref=0.192561, -0.301647	r_error =0.000001 	i_error =0.000000 
+Output_Signal[106] = (0.193055, -0.297741	ref=0.193055, -0.297741	r_error =0.000000 	i_error =0.000000 
+Output_Signal[107] = (0.193534, -0.293900	ref=0.193534, -0.293900	r_error =0.000000 	i_error =0.000000 
+Output_Signal[108] = (0.194000, -0.290123	ref=0.194001, -0.290124	r_error =0.000001 	i_error =0.000000 
+Output_Signal[109] = (0.194453, -0.286407	ref=0.194453, -0.286406	r_error =0.000000 	i_error =0.000001 
+Output_Signal[110] = (0.194893, -0.282752	ref=0.194892, -0.282752	r_error =0.000001 	i_error =0.000001 
+Output_Signal[111] = (0.195319, -0.279155	ref=0.195319, -0.279153	r_error =0.000000 	i_error =0.000001 
+Output_Signal[112] = (0.195734, -0.275615	ref=0.195734, -0.275615	r_error =0.000001 	i_error =0.000000 
+Output_Signal[113] = (0.196140, -0.272129	ref=0.196139, -0.272129	r_error =0.000001 	i_error =0.000000 
+Output_Signal[114] = (0.196532, -0.268696	ref=0.196532, -0.268697	r_error =0.000000 	i_error =0.000001 
+Output_Signal[115] = (0.196915, -0.265316	ref=0.196910, -0.265317	r_error =0.000005 	i_error =0.000001 
+Output_Signal[116] = (0.197286, -0.261988	ref=0.197287, -0.261987	r_error =0.000001 	i_error =0.000000 
+Output_Signal[117] = (0.197651, -0.258707	ref=0.197650, -0.258706	r_error =0.000001 	i_error =0.000001 
+Output_Signal[118] = (0.198003, -0.255473	ref=0.198002, -0.255473	r_error =0.000000 	i_error =0.000000 
+Output_Signal[119] = (0.198345, -0.252286	ref=0.198345, -0.252287	r_error =0.000000 	i_error =0.000000 
+Output_Signal[120] = (0.198678, -0.249145	ref=0.198680, -0.249143	r_error =0.000001 	i_error =0.000001 
+Output_Signal[121] = (0.199005, -0.246048	ref=0.199005, -0.246047	r_error =0.000000 	i_error =0.000000 
+Output_Signal[122] = (0.199323, -0.242993	ref=0.199323, -0.242993	r_error =0.000000 	i_error =0.000000 
+Output_Signal[123] = (0.199633, -0.239980	ref=0.199633, -0.239981	r_error =0.000001 	i_error =0.000001 
+Output_Signal[124] = (0.199934, -0.237008	ref=0.199933, -0.237008	r_error =0.000000 	i_error =0.000000 
+Output_Signal[125] = (0.200228, -0.234074	ref=0.200228, -0.234074	r_error =0.000000 	i_error =0.000000 
+Output_Signal[126] = (0.200513, -0.231181	ref=0.200514, -0.231182	r_error =0.000000 	i_error =0.000000 
+Output_Signal[127] = (0.200793, -0.228324	ref=0.200792, -0.228324	r_error =0.000001 	i_error =0.000000 
+Output_Signal[128] = (0.201057, -0.225506	ref=0.201057, -0.225502	r_error =0.000000 	i_error =0.000004 
+Output_Signal[129] = (0.201331, -0.222720	ref=0.201330, -0.222720	r_error =0.000000 	i_error =0.000000 
+Output_Signal[130] = (0.201590, -0.219971	ref=0.201590, -0.219971	r_error =0.000000 	i_error =0.000000 
+Output_Signal[131] = (0.201843, -0.217256	ref=0.201842, -0.217258	r_error =0.000001 	i_error =0.000002 
+Output_Signal[132] = (0.202089, -0.214572	ref=0.202089, -0.214572	r_error =0.000001 	i_error =0.000000 
+Output_Signal[133] = (0.202331, -0.211922	ref=0.202331, -0.211921	r_error =0.000000 	i_error =0.000001 
+Output_Signal[134] = (0.202566, -0.209303	ref=0.202566, -0.209303	r_error =0.000000 	i_error =0.000000 
+Output_Signal[135] = (0.202796, -0.206715	ref=0.202797, -0.206716	r_error =0.000001 	i_error =0.000001 
+Output_Signal[136] = (0.203021, -0.204156	ref=0.203020, -0.204157	r_error =0.000001 	i_error =0.000001 
+Output_Signal[137] = (0.203240, -0.201628	ref=0.203238, -0.201628	r_error =0.000002 	i_error =0.000001 
+Output_Signal[138] = (0.203453, -0.199128	ref=0.203453, -0.199128	r_error =0.000000 	i_error =0.000000 
+Output_Signal[139] = (0.203661, -0.196654	ref=0.203663, -0.196656	r_error =0.000002 	i_error =0.000002 
+Output_Signal[140] = (0.203866, -0.194211	ref=0.203866, -0.194211	r_error =0.000000 	i_error =0.000000 
+Output_Signal[141] = (0.204065, -0.191796	ref=0.204064, -0.191794	r_error =0.000001 	i_error =0.000002 
+Output_Signal[142] = (0.204260, -0.189400	ref=0.204259, -0.189399	r_error =0.000001 	i_error =0.000000 
+Output_Signal[143] = (0.204451, -0.187033	ref=0.204451, -0.187032	r_error =0.000000 	i_error =0.000000 
+Output_Signal[144] = (0.204635, -0.184688	ref=0.204635, -0.184689	r_error =0.000001 	i_error =0.000001 
+Output_Signal[145] = (0.204819, -0.182371	ref=0.204819, -0.182371	r_error =0.000000 	i_error =0.000000 
+Output_Signal[146] = (0.204996, -0.180077	ref=0.204996, -0.180078	r_error =0.000000 	i_error =0.000001 
+Output_Signal[147] = (0.205172, -0.177805	ref=0.205171, -0.177807	r_error =0.000001 	i_error =0.000002 
+Output_Signal[148] = (0.205341, -0.175556	ref=0.205342, -0.175556	r_error =0.000001 	i_error =0.000001 
+Output_Signal[149] = (0.205507, -0.173327	ref=0.205506, -0.173329	r_error =0.000000 	i_error =0.000002 
+Output_Signal[150] = (0.205669, -0.171124	ref=0.205670, -0.171124	r_error =0.000000 	i_error =0.000000 
+Output_Signal[151] = (0.205828, -0.168940	ref=0.205828, -0.168940	r_error =0.000000 	i_error =0.000000 
+Output_Signal[152] = (0.205983, -0.166778	ref=0.205983, -0.166777	r_error =0.000000 	i_error =0.000001 
+Output_Signal[153] = (0.206135, -0.164633	ref=0.206135, -0.164632	r_error =0.000000 	i_error =0.000000 
+Output_Signal[154] = (0.206285, -0.162509	ref=0.206284, -0.162509	r_error =0.000000 	i_error =0.000000 
+Output_Signal[155] = (0.206430, -0.160404	ref=0.206431, -0.160405	r_error =0.000000 	i_error =0.000001 
+Output_Signal[156] = (0.206571, -0.158318	ref=0.206572, -0.158318	r_error =0.000001 	i_error =0.000000 
+Output_Signal[157] = (0.206709, -0.156250	ref=0.206710, -0.156252	r_error =0.000001 	i_error =0.000002 
+Output_Signal[158] = (0.206847, -0.154203	ref=0.206848, -0.154204	r_error =0.000000 	i_error =0.000001 
+Output_Signal[159] = (0.206981, -0.152172	ref=0.206980, -0.152172	r_error =0.000001 	i_error =0.000001 
+Output_Signal[160] = (0.207113, -0.150159	ref=0.207114, -0.150158	r_error =0.000001 	i_error =0.000002 
+Output_Signal[161] = (0.207239, -0.148160	ref=0.207239, -0.148159	r_error =0.000000 	i_error =0.000000 
+Output_Signal[162] = (0.207365, -0.146180	ref=0.207365, -0.146179	r_error =0.000000 	i_error =0.000000 
+Output_Signal[163] = (0.207485, -0.144214	ref=0.207486, -0.144217	r_error =0.000001 	i_error =0.000003 
+Output_Signal[164] = (0.207607, -0.142266	ref=0.207607, -0.142266	r_error =0.000000 	i_error =0.000000 
+Output_Signal[165] = (0.207723, -0.140333	ref=0.207723, -0.140333	r_error =0.000001 	i_error =0.000001 
+Output_Signal[166] = (0.207839, -0.138414	ref=0.207838, -0.138414	r_error =0.000000 	i_error =0.000000 
+Output_Signal[167] = (0.207951, -0.136511	ref=0.207951, -0.136511	r_error =0.000000 	i_error =0.000000 
+Output_Signal[168] = (0.208061, -0.134622	ref=0.208061, -0.134621	r_error =0.000000 	i_error =0.000001 
+Output_Signal[169] = (0.208168, -0.132748	ref=0.208169, -0.132748	r_error =0.000001 	i_error =0.000001 
+Output_Signal[170] = (0.208273, -0.130887	ref=0.208274, -0.130887	r_error =0.000001 	i_error =0.000000 
+Output_Signal[171] = (0.208377, -0.129038	ref=0.208377, -0.129038	r_error =0.000000 	i_error =0.000000 
+Output_Signal[172] = (0.208477, -0.127206	ref=0.208478, -0.127206	r_error =0.000000 	i_error =0.000000 
+Output_Signal[173] = (0.208577, -0.125386	ref=0.208577, -0.125385	r_error =0.000000 	i_error =0.000001 
+Output_Signal[174] = (0.208673, -0.123578	ref=0.208673, -0.123578	r_error =0.000000 	i_error =0.000000 
+Output_Signal[175] = (0.208767, -0.121782	ref=0.208767, -0.121782	r_error =0.000001 	i_error =0.000000 
+Output_Signal[176] = (0.208860, -0.119997	ref=0.208859, -0.119997	r_error =0.000000 	i_error =0.000000 
+Output_Signal[177] = (0.208950, -0.118227	ref=0.208950, -0.118228	r_error =0.000000 	i_error =0.000000 
+Output_Signal[178] = (0.209038, -0.116466	ref=0.209039, -0.116467	r_error =0.000001 	i_error =0.000001 
+Output_Signal[179] = (0.209118, -0.114717	ref=0.209124, -0.114717	r_error =0.000005 	i_error =0.000000 
+Output_Signal[180] = (0.209211, -0.112983	ref=0.209212, -0.112982	r_error =0.000000 	i_error =0.000001 
+Output_Signal[181] = (0.209297, -0.111257	ref=0.209295, -0.111256	r_error =0.000001 	i_error =0.000001 
+Output_Signal[182] = (0.209375, -0.109540	ref=0.209376, -0.109539	r_error =0.000001 	i_error =0.000000 
+Output_Signal[183] = (0.209456, -0.107835	ref=0.209456, -0.107835	r_error =0.000000 	i_error =0.000000 
+Output_Signal[184] = (0.209535, -0.106142	ref=0.209535, -0.106141	r_error =0.000000 	i_error =0.000001 
+Output_Signal[185] = (0.209610, -0.104455	ref=0.209610, -0.104455	r_error =0.000000 	i_error =0.000000 
+Output_Signal[186] = (0.209686, -0.102780	ref=0.209685, -0.102779	r_error =0.000001 	i_error =0.000000 
+Output_Signal[187] = (0.209757, -0.101114	ref=0.209756, -0.101114	r_error =0.000000 	i_error =0.000000 
+Output_Signal[188] = (0.209828, -0.099459	ref=0.209828, -0.099458	r_error =0.000000 	i_error =0.000002 
+Output_Signal[189] = (0.209899, -0.097812	ref=0.209899, -0.097816	r_error =0.000001 	i_error =0.000003 
+Output_Signal[190] = (0.209967, -0.096175	ref=0.209967, -0.096175	r_error =0.000000 	i_error =0.000000 
+Output_Signal[191] = (0.210034, -0.094546	ref=0.210035, -0.094545	r_error =0.000001 	i_error =0.000000 
+Output_Signal[192] = (0.210096, -0.092930	ref=0.210096, -0.092928	r_error =0.000000 	i_error =0.000003 
+Output_Signal[193] = (0.210163, -0.091313	ref=0.210163, -0.091313	r_error =0.000000 	i_error =0.000000 
+Output_Signal[194] = (0.210225, -0.089710	ref=0.210224, -0.089709	r_error =0.000000 	i_error =0.000000 
+Output_Signal[195] = (0.210287, -0.088113	ref=0.210286, -0.088114	r_error =0.000001 	i_error =0.000000 
+Output_Signal[196] = (0.210344, -0.086526	ref=0.210345, -0.086526	r_error =0.000001 	i_error =0.000000 
+Output_Signal[197] = (0.210405, -0.084945	ref=0.210405, -0.084945	r_error =0.000000 	i_error =0.000000 
+Output_Signal[198] = (0.210461, -0.083373	ref=0.210462, -0.083373	r_error =0.000000 	i_error =0.000000 
+Output_Signal[199] = (0.210516, -0.081808	ref=0.210516, -0.081809	r_error =0.000000 	i_error =0.000002 
+Output_Signal[200] = (0.210571, -0.080251	ref=0.210571, -0.080251	r_error =0.000000 	i_error =0.000000 
+Output_Signal[201] = (0.210625, -0.078698	ref=0.210623, -0.078698	r_error =0.000001 	i_error =0.000000 
+Output_Signal[202] = (0.210677, -0.077153	ref=0.210677, -0.077153	r_error =0.000000 	i_error =0.000000 
+Output_Signal[203] = (0.210726, -0.075616	ref=0.210727, -0.075617	r_error =0.000001 	i_error =0.000001 
+Output_Signal[204] = (0.210775, -0.074085	ref=0.210775, -0.074085	r_error =0.000000 	i_error =0.000000 
+Output_Signal[205] = (0.210826, -0.072557	ref=0.210827, -0.072556	r_error =0.000001 	i_error =0.000001 
+Output_Signal[206] = (0.210872, -0.071041	ref=0.210872, -0.071040	r_error =0.000001 	i_error =0.000000 
+Output_Signal[207] = (0.210918, -0.069526	ref=0.210918, -0.069526	r_error =0.000000 	i_error =0.000001 
+Output_Signal[208] = (0.210963, -0.068018	ref=0.210961, -0.068019	r_error =0.000002 	i_error =0.000001 
+Output_Signal[209] = (0.211006, -0.066518	ref=0.211006, -0.066519	r_error =0.000000 	i_error =0.000000 
+Output_Signal[210] = (0.211048, -0.065022	ref=0.211049, -0.065022	r_error =0.000001 	i_error =0.000000 
+Output_Signal[211] = (0.211088, -0.063533	ref=0.211090, -0.063533	r_error =0.000001 	i_error =0.000001 
+Output_Signal[212] = (0.211129, -0.062047	ref=0.211129, -0.062048	r_error =0.000000 	i_error =0.000001 
+Output_Signal[213] = (0.211169, -0.060568	ref=0.211169, -0.060567	r_error =0.000000 	i_error =0.000001 
+Output_Signal[214] = (0.211206, -0.059093	ref=0.211206, -0.059092	r_error =0.000000 	i_error =0.000000 
+Output_Signal[215] = (0.211244, -0.057622	ref=0.211244, -0.057623	r_error =0.000000 	i_error =0.000000 
+Output_Signal[216] = (0.211279, -0.056156	ref=0.211279, -0.056156	r_error =0.000001 	i_error =0.000000 
+Output_Signal[217] = (0.211313, -0.054696	ref=0.211313, -0.054696	r_error =0.000000 	i_error =0.000000 
+Output_Signal[218] = (0.211348, -0.053239	ref=0.211348, -0.053239	r_error =0.000000 	i_error =0.000000 
+Output_Signal[219] = (0.211380, -0.051787	ref=0.211381, -0.051787	r_error =0.000001 	i_error =0.000000 
+Output_Signal[220] = (0.211412, -0.050340	ref=0.211411, -0.050340	r_error =0.000000 	i_error =0.000000 
+Output_Signal[221] = (0.211443, -0.048896	ref=0.211440, -0.048896	r_error =0.000003 	i_error =0.000001 
+Output_Signal[222] = (0.211473, -0.047456	ref=0.211473, -0.047456	r_error =0.000000 	i_error =0.000000 
+Output_Signal[223] = (0.211502, -0.046020	ref=0.211502, -0.046019	r_error =0.000000 	i_error =0.000000 
+Output_Signal[224] = (0.211527, -0.044587	ref=0.211529, -0.044586	r_error =0.000002 	i_error =0.000001 
+Output_Signal[225] = (0.211557, -0.043159	ref=0.211557, -0.043158	r_error =0.000000 	i_error =0.000001 
+Output_Signal[226] = (0.211582, -0.041733	ref=0.211583, -0.041734	r_error =0.000001 	i_error =0.000001 
+Output_Signal[227] = (0.211608, -0.040311	ref=0.211608, -0.040311	r_error =0.000000 	i_error =0.000000 
+Output_Signal[228] = (0.211632, -0.038893	ref=0.211632, -0.038892	r_error =0.000000 	i_error =0.000001 
+Output_Signal[229] = (0.211655, -0.037478	ref=0.211655, -0.037478	r_error =0.000000 	i_error =0.000000 
+Output_Signal[230] = (0.211678, -0.036064	ref=0.211679, -0.036064	r_error =0.000000 	i_error =0.000000 
+Output_Signal[231] = (0.211700, -0.034654	ref=0.211699, -0.034655	r_error =0.000000 	i_error =0.000001 
+Output_Signal[232] = (0.211719, -0.033247	ref=0.211719, -0.033247	r_error =0.000000 	i_error =0.000000 
+Output_Signal[233] = (0.211740, -0.031843	ref=0.211740, -0.031843	r_error =0.000001 	i_error =0.000000 
+Output_Signal[234] = (0.211760, -0.030441	ref=0.211759, -0.030440	r_error =0.000000 	i_error =0.000001 
+Output_Signal[235] = (0.211776, -0.029042	ref=0.211777, -0.029039	r_error =0.000001 	i_error =0.000002 
+Output_Signal[236] = (0.211793, -0.027643	ref=0.211793, -0.027644	r_error =0.000000 	i_error =0.000001 
+Output_Signal[237] = (0.211810, -0.026247	ref=0.211809, -0.026249	r_error =0.000000 	i_error =0.000002 
+Output_Signal[238] = (0.211825, -0.024855	ref=0.211825, -0.024855	r_error =0.000000 	i_error =0.000000 
+Output_Signal[239] = (0.211840, -0.023463	ref=0.211840, -0.023463	r_error =0.000000 	i_error =0.000000 
+Output_Signal[240] = (0.211853, -0.022074	ref=0.211852, -0.022073	r_error =0.000001 	i_error =0.000000 
+Output_Signal[241] = (0.211867, -0.020686	ref=0.211867, -0.020685	r_error =0.000001 	i_error =0.000001 
+Output_Signal[242] = (0.211877, -0.019298	ref=0.211877, -0.019298	r_error =0.000001 	i_error =0.000001 
+Output_Signal[243] = (0.211886, -0.017918	ref=0.211885, -0.017918	r_error =0.000001 	i_error =0.000000 
+Output_Signal[244] = (0.211900, -0.016529	ref=0.211901, -0.016530	r_error =0.000001 	i_error =0.000001 
+Output_Signal[245] = (0.211911, -0.015147	ref=0.211910, -0.015150	r_error =0.000001 	i_error =0.000003 
+Output_Signal[246] = (0.211918, -0.013768	ref=0.211918, -0.013768	r_error =0.000001 	i_error =0.000000 
+Output_Signal[247] = (0.211925, -0.012389	ref=0.211925, -0.012389	r_error =0.000000 	i_error =0.000000 
+Output_Signal[248] = (0.211934, -0.011009	ref=0.211934, -0.011010	r_error =0.000000 	i_error =0.000001 
+Output_Signal[249] = (0.211938, -0.009633	ref=0.211939, -0.009632	r_error =0.000000 	i_error =0.000001 
+Output_Signal[250] = (0.211944, -0.008254	ref=0.211944, -0.008254	r_error =0.000000 	i_error =0.000000 
+Output_Signal[251] = (0.211948, -0.006878	ref=0.211947, -0.006878	r_error =0.000001 	i_error =0.000000 
+Output_Signal[252] = (0.211951, -0.005501	ref=0.211952, -0.005502	r_error =0.000000 	i_error =0.000001 
+Output_Signal[253] = (0.211954, -0.004126	ref=0.211955, -0.004126	r_error =0.000000 	i_error =0.000001 
+Output_Signal[254] = (0.211957, -0.002751	ref=0.211957, -0.002751	r_error =0.000000 	i_error =0.000000 
+Output_Signal[255] = (0.211959, -0.001375	ref=0.211959, -0.001375	r_error =0.000001 	i_error =0.000000 
+Output_Signal[256] = (0.211945, 0.000000	ref=0.211945, 0.000000	r_error =0.000000 	i_error =0.000000 
+Output_Signal[257] = (0.211959, 0.001375	ref=0.211958, 0.001374	r_error =0.000000 	i_error =0.000001 
+Output_Signal[258] = (0.211956, 0.002751	ref=0.211957, 0.002751	r_error =0.000000 	i_error =0.000000 
+Output_Signal[259] = (0.211954, 0.004126	ref=0.211955, 0.004126	r_error =0.000001 	i_error =0.000000 
+Output_Signal[260] = (0.211951, 0.005502	ref=0.211952, 0.005502	r_error =0.000001 	i_error =0.000001 
+Output_Signal[261] = (0.211949, 0.006878	ref=0.211948, 0.006877	r_error =0.000001 	i_error =0.000001 
+Output_Signal[262] = (0.211944, 0.008254	ref=0.211944, 0.008254	r_error =0.000000 	i_error =0.000000 
+Output_Signal[263] = (0.211938, 0.009633	ref=0.211939, 0.009632	r_error =0.000000 	i_error =0.000001 
+Output_Signal[264] = (0.211934, 0.011009	ref=0.211934, 0.011010	r_error =0.000000 	i_error =0.000001 
+Output_Signal[265] = (0.211925, 0.012389	ref=0.211925, 0.012389	r_error =0.000000 	i_error =0.000000 
+Output_Signal[266] = (0.211918, 0.013768	ref=0.211917, 0.013768	r_error =0.000000 	i_error =0.000000 
+Output_Signal[267] = (0.211908, 0.015149	ref=0.211909, 0.015151	r_error =0.000000 	i_error =0.000002 
+Output_Signal[268] = (0.211899, 0.016530	ref=0.211899, 0.016529	r_error =0.000000 	i_error =0.000001 
+Output_Signal[269] = (0.211887, 0.017914	ref=0.211891, 0.017914	r_error =0.000004 	i_error =0.000000 
+Output_Signal[270] = (0.211879, 0.019299	ref=0.211878, 0.019298	r_error =0.000001 	i_error =0.000001 
+Output_Signal[271] = (0.211868, 0.020685	ref=0.211867, 0.020685	r_error =0.000001 	i_error =0.000000 
+Output_Signal[272] = (0.211853, 0.022073	ref=0.211853, 0.022073	r_error =0.000001 	i_error =0.000000 
+Output_Signal[273] = (0.211841, 0.023463	ref=0.211841, 0.023462	r_error =0.000001 	i_error =0.000000 
+Output_Signal[274] = (0.211825, 0.024855	ref=0.211825, 0.024855	r_error =0.000001 	i_error =0.000000 
+Output_Signal[275] = (0.211808, 0.026246	ref=0.211812, 0.026249	r_error =0.000003 	i_error =0.000002 
+Output_Signal[276] = (0.211794, 0.027643	ref=0.211793, 0.027644	r_error =0.000000 	i_error =0.000000 
+Output_Signal[277] = (0.211775, 0.029041	ref=0.211778, 0.029042	r_error =0.000003 	i_error =0.000001 
+Output_Signal[278] = (0.211760, 0.030440	ref=0.211760, 0.030440	r_error =0.000000 	i_error =0.000000 
+Output_Signal[279] = (0.211739, 0.031843	ref=0.211740, 0.031844	r_error =0.000000 	i_error =0.000001 
+Output_Signal[280] = (0.211719, 0.033247	ref=0.211719, 0.033247	r_error =0.000000 	i_error =0.000000 
+Output_Signal[281] = (0.211699, 0.034654	ref=0.211699, 0.034654	r_error =0.000000 	i_error =0.000000 
+Output_Signal[282] = (0.211678, 0.036064	ref=0.211678, 0.036064	r_error =0.000000 	i_error =0.000000 
+Output_Signal[283] = (0.211655, 0.037476	ref=0.211656, 0.037478	r_error =0.000001 	i_error =0.000002 
+Output_Signal[284] = (0.211631, 0.038893	ref=0.211632, 0.038892	r_error =0.000000 	i_error =0.000001 
+Output_Signal[285] = (0.211608, 0.040313	ref=0.211609, 0.040310	r_error =0.000001 	i_error =0.000002 
+Output_Signal[286] = (0.211582, 0.041734	ref=0.211582, 0.041734	r_error =0.000000 	i_error =0.000000 
+Output_Signal[287] = (0.211557, 0.043159	ref=0.211554, 0.043159	r_error =0.000003 	i_error =0.000000 
+Output_Signal[288] = (0.211527, 0.044587	ref=0.211529, 0.044586	r_error =0.000002 	i_error =0.000001 
+Output_Signal[289] = (0.211502, 0.046019	ref=0.211502, 0.046020	r_error =0.000001 	i_error =0.000001 
+Output_Signal[290] = (0.211473, 0.047456	ref=0.211474, 0.047456	r_error =0.000000 	i_error =0.000000 
+Output_Signal[291] = (0.211443, 0.048894	ref=0.211444, 0.048894	r_error =0.000001 	i_error =0.000000 
+Output_Signal[292] = (0.211411, 0.050340	ref=0.211411, 0.050340	r_error =0.000000 	i_error =0.000001 
+Output_Signal[293] = (0.211380, 0.051786	ref=0.211380, 0.051787	r_error =0.000000 	i_error =0.000001 
+Output_Signal[294] = (0.211348, 0.053239	ref=0.211348, 0.053239	r_error =0.000001 	i_error =0.000000 
+Output_Signal[295] = (0.211313, 0.054696	ref=0.211313, 0.054696	r_error =0.000001 	i_error =0.000000 
+Output_Signal[296] = (0.211279, 0.056156	ref=0.211279, 0.056156	r_error =0.000000 	i_error =0.000000 
+Output_Signal[297] = (0.211243, 0.057622	ref=0.211242, 0.057622	r_error =0.000001 	i_error =0.000000 
+Output_Signal[298] = (0.211206, 0.059092	ref=0.211206, 0.059092	r_error =0.000000 	i_error =0.000000 
+Output_Signal[299] = (0.211169, 0.060566	ref=0.211168, 0.060569	r_error =0.000001 	i_error =0.000003 
+Output_Signal[300] = (0.211128, 0.062047	ref=0.211128, 0.062048	r_error =0.000000 	i_error =0.000001 
+Output_Signal[301] = (0.211089, 0.063531	ref=0.211088, 0.063529	r_error =0.000000 	i_error =0.000001 
+Output_Signal[302] = (0.211048, 0.065022	ref=0.211049, 0.065022	r_error =0.000001 	i_error =0.000000 
+Output_Signal[303] = (0.211006, 0.066518	ref=0.211006, 0.066517	r_error =0.000000 	i_error =0.000001 
+Output_Signal[304] = (0.210963, 0.068018	ref=0.210961, 0.068019	r_error =0.000002 	i_error =0.000001 
+Output_Signal[305] = (0.210917, 0.069526	ref=0.210917, 0.069525	r_error =0.000001 	i_error =0.000000 
+Output_Signal[306] = (0.210872, 0.071039	ref=0.210871, 0.071040	r_error =0.000001 	i_error =0.000001 
+Output_Signal[307] = (0.210822, 0.072556	ref=0.210826, 0.072558	r_error =0.000004 	i_error =0.000002 
+Output_Signal[308] = (0.210775, 0.074085	ref=0.210776, 0.074085	r_error =0.000000 	i_error =0.000001 
+Output_Signal[309] = (0.210728, 0.075616	ref=0.210728, 0.075615	r_error =0.000001 	i_error =0.000001 
+Output_Signal[310] = (0.210677, 0.077154	ref=0.210677, 0.077153	r_error =0.000000 	i_error =0.000001 
+Output_Signal[311] = (0.210625, 0.078698	ref=0.210625, 0.078697	r_error =0.000000 	i_error =0.000001 
+Output_Signal[312] = (0.210571, 0.080251	ref=0.210571, 0.080250	r_error =0.000000 	i_error =0.000000 
+Output_Signal[313] = (0.210516, 0.081807	ref=0.210517, 0.081807	r_error =0.000001 	i_error =0.000000 
+Output_Signal[314] = (0.210462, 0.083373	ref=0.210462, 0.083373	r_error =0.000000 	i_error =0.000000 
+Output_Signal[315] = (0.210404, 0.084945	ref=0.210404, 0.084945	r_error =0.000000 	i_error =0.000000 
+Output_Signal[316] = (0.210345, 0.086526	ref=0.210346, 0.086526	r_error =0.000002 	i_error =0.000000 
+Output_Signal[317] = (0.210287, 0.088114	ref=0.210286, 0.088116	r_error =0.000001 	i_error =0.000002 
+Output_Signal[318] = (0.210225, 0.089710	ref=0.210224, 0.089709	r_error =0.000001 	i_error =0.000000 
+Output_Signal[319] = (0.210163, 0.091313	ref=0.210164, 0.091313	r_error =0.000000 	i_error =0.000000 
+Output_Signal[320] = (0.210096, 0.092930	ref=0.210096, 0.092928	r_error =0.000000 	i_error =0.000003 
+Output_Signal[321] = (0.210034, 0.094546	ref=0.210035, 0.094545	r_error =0.000001 	i_error =0.000000 
+Output_Signal[322] = (0.209967, 0.096175	ref=0.209967, 0.096175	r_error =0.000001 	i_error =0.000000 
+Output_Signal[323] = (0.209900, 0.097813	ref=0.209902, 0.097813	r_error =0.000002 	i_error =0.000001 
+Output_Signal[324] = (0.209829, 0.099459	ref=0.209829, 0.099458	r_error =0.000000 	i_error =0.000001 
+Output_Signal[325] = (0.209757, 0.101115	ref=0.209757, 0.101116	r_error =0.000001 	i_error =0.000001 
+Output_Signal[326] = (0.209685, 0.102780	ref=0.209685, 0.102780	r_error =0.000001 	i_error =0.000000 
+Output_Signal[327] = (0.209610, 0.104455	ref=0.209610, 0.104456	r_error =0.000000 	i_error =0.000001 
+Output_Signal[328] = (0.209535, 0.106142	ref=0.209535, 0.106141	r_error =0.000000 	i_error =0.000000 
+Output_Signal[329] = (0.209455, 0.107835	ref=0.209456, 0.107835	r_error =0.000000 	i_error =0.000000 
+Output_Signal[330] = (0.209375, 0.109540	ref=0.209376, 0.109539	r_error =0.000001 	i_error =0.000001 
+Output_Signal[331] = (0.209295, 0.111256	ref=0.209294, 0.111255	r_error =0.000001 	i_error =0.000001 
+Output_Signal[332] = (0.209211, 0.112983	ref=0.209213, 0.112982	r_error =0.000001 	i_error =0.000001 
+Output_Signal[333] = (0.209126, 0.114720	ref=0.209125, 0.114719	r_error =0.000001 	i_error =0.000000 
+Output_Signal[334] = (0.209039, 0.116467	ref=0.209039, 0.116467	r_error =0.000000 	i_error =0.000000 
+Output_Signal[335] = (0.208950, 0.118228	ref=0.208951, 0.118227	r_error =0.000001 	i_error =0.000001 
+Output_Signal[336] = (0.208860, 0.119997	ref=0.208859, 0.119998	r_error =0.000001 	i_error =0.000000 
+Output_Signal[337] = (0.208767, 0.121782	ref=0.208768, 0.121781	r_error =0.000000 	i_error =0.000000 
+Output_Signal[338] = (0.208674, 0.123578	ref=0.208673, 0.123577	r_error =0.000001 	i_error =0.000001 
+Output_Signal[339] = (0.208576, 0.125384	ref=0.208574, 0.125384	r_error =0.000002 	i_error =0.000001 
+Output_Signal[340] = (0.208478, 0.127207	ref=0.208478, 0.127206	r_error =0.000000 	i_error =0.000001 
+Output_Signal[341] = (0.208378, 0.129039	ref=0.208377, 0.129039	r_error =0.000001 	i_error =0.000000 
+Output_Signal[342] = (0.208273, 0.130887	ref=0.208274, 0.130888	r_error =0.000001 	i_error =0.000000 
+Output_Signal[343] = (0.208168, 0.132748	ref=0.208169, 0.132748	r_error =0.000001 	i_error =0.000000 
+Output_Signal[344] = (0.208061, 0.134622	ref=0.208061, 0.134620	r_error =0.000000 	i_error =0.000001 
+Output_Signal[345] = (0.207952, 0.136511	ref=0.207952, 0.136511	r_error =0.000000 	i_error =0.000000 
+Output_Signal[346] = (0.207839, 0.138414	ref=0.207839, 0.138415	r_error =0.000000 	i_error =0.000001 
+Output_Signal[347] = (0.207722, 0.140333	ref=0.207723, 0.140334	r_error =0.000001 	i_error =0.000002 
+Output_Signal[348] = (0.207607, 0.142266	ref=0.207607, 0.142266	r_error =0.000000 	i_error =0.000001 
+Output_Signal[349] = (0.207486, 0.144215	ref=0.207490, 0.144212	r_error =0.000004 	i_error =0.000002 
+Output_Signal[350] = (0.207365, 0.146180	ref=0.207365, 0.146180	r_error =0.000000 	i_error =0.000000 
+Output_Signal[351] = (0.207239, 0.148159	ref=0.207239, 0.148161	r_error =0.000001 	i_error =0.000002 
+Output_Signal[352] = (0.207113, 0.150159	ref=0.207114, 0.150158	r_error =0.000001 	i_error =0.000002 
+Output_Signal[353] = (0.206981, 0.152171	ref=0.206982, 0.152171	r_error =0.000001 	i_error =0.000001 
+Output_Signal[354] = (0.206848, 0.154203	ref=0.206847, 0.154202	r_error =0.000000 	i_error =0.000000 
+Output_Signal[355] = (0.206713, 0.156251	ref=0.206710, 0.156251	r_error =0.000003 	i_error =0.000000 
+Output_Signal[356] = (0.206571, 0.158318	ref=0.206571, 0.158318	r_error =0.000001 	i_error =0.000000 
+Output_Signal[357] = (0.206429, 0.160404	ref=0.206432, 0.160403	r_error =0.000002 	i_error =0.000001 
+Output_Signal[358] = (0.206285, 0.162509	ref=0.206285, 0.162509	r_error =0.000000 	i_error =0.000000 
+Output_Signal[359] = (0.206136, 0.164632	ref=0.206136, 0.164633	r_error =0.000001 	i_error =0.000000 
+Output_Signal[360] = (0.205984, 0.166778	ref=0.205983, 0.166777	r_error =0.000000 	i_error =0.000000 
+Output_Signal[361] = (0.205828, 0.168940	ref=0.205828, 0.168940	r_error =0.000000 	i_error =0.000000 
+Output_Signal[362] = (0.205669, 0.171124	ref=0.205669, 0.171124	r_error =0.000000 	i_error =0.000000 
+Output_Signal[363] = (0.205506, 0.173329	ref=0.205506, 0.173329	r_error =0.000000 	i_error =0.000000 
+Output_Signal[364] = (0.205341, 0.175556	ref=0.205341, 0.175557	r_error =0.000000 	i_error =0.000001 
+Output_Signal[365] = (0.205171, 0.177805	ref=0.205170, 0.177805	r_error =0.000001 	i_error =0.000000 
+Output_Signal[366] = (0.204996, 0.180077	ref=0.204997, 0.180077	r_error =0.000000 	i_error =0.000000 
+Output_Signal[367] = (0.204819, 0.182370	ref=0.204818, 0.182371	r_error =0.000001 	i_error =0.000001 
+Output_Signal[368] = (0.204635, 0.184688	ref=0.204635, 0.184689	r_error =0.000001 	i_error =0.000001 
+Output_Signal[369] = (0.204451, 0.187032	ref=0.204451, 0.187032	r_error =0.000000 	i_error =0.000001 
+Output_Signal[370] = (0.204261, 0.189399	ref=0.204259, 0.189399	r_error =0.000001 	i_error =0.000000 
+Output_Signal[371] = (0.204068, 0.191788	ref=0.204062, 0.191792	r_error =0.000005 	i_error =0.000004 
+Output_Signal[372] = (0.203866, 0.194212	ref=0.203867, 0.194211	r_error =0.000001 	i_error =0.000000 
+Output_Signal[373] = (0.203663, 0.196656	ref=0.203661, 0.196655	r_error =0.000001 	i_error =0.000001 
+Output_Signal[374] = (0.203453, 0.199128	ref=0.203453, 0.199128	r_error =0.000000 	i_error =0.000000 
+Output_Signal[375] = (0.203239, 0.201628	ref=0.203240, 0.201629	r_error =0.000001 	i_error =0.000001 
+Output_Signal[376] = (0.203021, 0.204156	ref=0.203020, 0.204157	r_error =0.000001 	i_error =0.000000 
+Output_Signal[377] = (0.202796, 0.206715	ref=0.202797, 0.206715	r_error =0.000001 	i_error =0.000000 
+Output_Signal[378] = (0.202566, 0.209303	ref=0.202566, 0.209303	r_error =0.000000 	i_error =0.000000 
+Output_Signal[379] = (0.202332, 0.211922	ref=0.202331, 0.211922	r_error =0.000001 	i_error =0.000000 
+Output_Signal[380] = (0.202088, 0.214572	ref=0.202089, 0.214572	r_error =0.000001 	i_error =0.000000 
+Output_Signal[381] = (0.201841, 0.217257	ref=0.201844, 0.217256	r_error =0.000003 	i_error =0.000001 
+Output_Signal[382] = (0.201590, 0.219970	ref=0.201590, 0.219971	r_error =0.000000 	i_error =0.000000 
+Output_Signal[383] = (0.201331, 0.222720	ref=0.201331, 0.222720	r_error =0.000000 	i_error =0.000000 
+Output_Signal[384] = (0.201057, 0.225506	ref=0.201057, 0.225502	r_error =0.000000 	i_error =0.000004 
+Output_Signal[385] = (0.200793, 0.228324	ref=0.200792, 0.228325	r_error =0.000000 	i_error =0.000001 
+Output_Signal[386] = (0.200513, 0.231181	ref=0.200513, 0.231182	r_error =0.000000 	i_error =0.000000 
+Output_Signal[387] = (0.200228, 0.234075	ref=0.200226, 0.234075	r_error =0.000002 	i_error =0.000000 
+Output_Signal[388] = (0.199933, 0.237008	ref=0.199933, 0.237008	r_error =0.000000 	i_error =0.000000 
+Output_Signal[389] = (0.199632, 0.239979	ref=0.199633, 0.239981	r_error =0.000001 	i_error =0.000002 
+Output_Signal[390] = (0.199323, 0.242993	ref=0.199323, 0.242993	r_error =0.000000 	i_error =0.000000 
+Output_Signal[391] = (0.199005, 0.246048	ref=0.199004, 0.246047	r_error =0.000001 	i_error =0.000001 
+Output_Signal[392] = (0.198678, 0.249145	ref=0.198680, 0.249144	r_error =0.000001 	i_error =0.000001 
+Output_Signal[393] = (0.198345, 0.252286	ref=0.198345, 0.252286	r_error =0.000000 	i_error =0.000000 
+Output_Signal[394] = (0.198003, 0.255473	ref=0.198002, 0.255472	r_error =0.000000 	i_error =0.000001 
+Output_Signal[395] = (0.197650, 0.258705	ref=0.197649, 0.258706	r_error =0.000002 	i_error =0.000001 
+Output_Signal[396] = (0.197287, 0.261986	ref=0.197287, 0.261987	r_error =0.000000 	i_error =0.000000 
+Output_Signal[397] = (0.196917, 0.265315	ref=0.196916, 0.265319	r_error =0.000001 	i_error =0.000004 
+Output_Signal[398] = (0.196533, 0.268696	ref=0.196533, 0.268696	r_error =0.000000 	i_error =0.000000 
+Output_Signal[399] = (0.196140, 0.272128	ref=0.196140, 0.272129	r_error =0.000000 	i_error =0.000000 
+Output_Signal[400] = (0.195734, 0.275615	ref=0.195734, 0.275615	r_error =0.000000 	i_error =0.000000 
+Output_Signal[401] = (0.195320, 0.279155	ref=0.195320, 0.279155	r_error =0.000001 	i_error =0.000000 
+Output_Signal[402] = (0.194893, 0.282752	ref=0.194892, 0.282752	r_error =0.000000 	i_error =0.000000 
+Output_Signal[403] = (0.194452, 0.286406	ref=0.194452, 0.286408	r_error =0.000001 	i_error =0.000001 
+Output_Signal[404] = (0.194001, 0.290123	ref=0.194001, 0.290123	r_error =0.000001 	i_error =0.000000 
+Output_Signal[405] = (0.193533, 0.293899	ref=0.193534, 0.293900	r_error =0.000001 	i_error =0.000001 
+Output_Signal[406] = (0.193055, 0.297741	ref=0.193055, 0.297741	r_error =0.000000 	i_error =0.000000 
+Output_Signal[407] = (0.192562, 0.301648	ref=0.192562, 0.301648	r_error =0.000000 	i_error =0.000001 
+Output_Signal[408] = (0.192052, 0.305623	ref=0.192051, 0.305622	r_error =0.000001 	i_error =0.000001 
+Output_Signal[409] = (0.191528, 0.309666	ref=0.191528, 0.309666	r_error =0.000000 	i_error =0.000000 
+Output_Signal[410] = (0.190987, 0.313782	ref=0.190988, 0.313782	r_error =0.000000 	i_error =0.000000 
+Output_Signal[411] = (0.190430, 0.317972	ref=0.190431, 0.317971	r_error =0.000000 	i_error =0.000000 
+Output_Signal[412] = (0.189856, 0.322240	ref=0.189855, 0.322241	r_error =0.000000 	i_error =0.000000 
+Output_Signal[413] = (0.189263, 0.326585	ref=0.189266, 0.326589	r_error =0.000002 	i_error =0.000003 
+Output_Signal[414] = (0.188652, 0.331016	ref=0.188652, 0.331016	r_error =0.000001 	i_error =0.000001 
+Output_Signal[415] = (0.188020, 0.335529	ref=0.188020, 0.335529	r_error =0.000000 	i_error =0.000000 
+Output_Signal[416] = (0.187365, 0.340129	ref=0.187364, 0.340127	r_error =0.000001 	i_error =0.000002 
+Output_Signal[417] = (0.186695, 0.344821	ref=0.186696, 0.344822	r_error =0.000000 	i_error =0.000001 
+Output_Signal[418] = (0.185999, 0.349607	ref=0.185999, 0.349607	r_error =0.000000 	i_error =0.000000 
+Output_Signal[419] = (0.185279, 0.354488	ref=0.185280, 0.354489	r_error =0.000000 	i_error =0.000001 
+Output_Signal[420] = (0.184538, 0.359470	ref=0.184538, 0.359469	r_error =0.000000 	i_error =0.000001 
+Output_Signal[421] = (0.183767, 0.364556	ref=0.183768, 0.364557	r_error =0.000001 	i_error =0.000001 
+Output_Signal[422] = (0.182972, 0.369751	ref=0.182972, 0.369751	r_error =0.000000 	i_error =0.000000 
+Output_Signal[423] = (0.182147, 0.375056	ref=0.182148, 0.375058	r_error =0.000001 	i_error =0.000001 
+Output_Signal[424] = (0.181292, 0.380476	ref=0.181293, 0.380477	r_error =0.000001 	i_error =0.000001 
+Output_Signal[425] = (0.180410, 0.386019	ref=0.180409, 0.386021	r_error =0.000002 	i_error =0.000001 
+Output_Signal[426] = (0.179494, 0.391685	ref=0.179494, 0.391685	r_error =0.000000 	i_error =0.000000 
+Output_Signal[427] = (0.178544, 0.397483	ref=0.178543, 0.397481	r_error =0.000001 	i_error =0.000002 
+Output_Signal[428] = (0.177558, 0.403414	ref=0.177558, 0.403412	r_error =0.000000 	i_error =0.000002 
+Output_Signal[429] = (0.176537, 0.409484	ref=0.176536, 0.409482	r_error =0.000001 	i_error =0.000002 
+Output_Signal[430] = (0.175474, 0.415700	ref=0.175474, 0.415700	r_error =0.000000 	i_error =0.000000 
+Output_Signal[431] = (0.174370, 0.422068	ref=0.174370, 0.422068	r_error =0.000000 	i_error =0.000000 
+Output_Signal[432] = (0.173226, 0.428594	ref=0.173226, 0.428595	r_error =0.000000 	i_error =0.000001 
+Output_Signal[433] = (0.172032, 0.435285	ref=0.172031, 0.435285	r_error =0.000001 	i_error =0.000001 
+Output_Signal[434] = (0.170793, 0.442147	ref=0.170792, 0.442146	r_error =0.000001 	i_error =0.000000 
+Output_Signal[435] = (0.169507, 0.449185	ref=0.169504, 0.449185	r_error =0.000002 	i_error =0.000000 
+Output_Signal[436] = (0.168155, 0.456416	ref=0.168157, 0.456416	r_error =0.000002 	i_error =0.000000 
+Output_Signal[437] = (0.166756, 0.463839	ref=0.166757, 0.463840	r_error =0.000001 	i_error =0.000000 
+Output_Signal[438] = (0.165295, 0.471467	ref=0.165295, 0.471467	r_error =0.000000 	i_error =0.000000 
+Output_Signal[439] = (0.163770, 0.479308	ref=0.163771, 0.479308	r_error =0.000001 	i_error =0.000000 
+Output_Signal[440] = (0.162179, 0.487373	ref=0.162181, 0.487373	r_error =0.000002 	i_error =0.000000 
+Output_Signal[441] = (0.160519, 0.495671	ref=0.160519, 0.495671	r_error =0.000000 	i_error =0.000000 
+Output_Signal[442] = (0.158781, 0.504215	ref=0.158781, 0.504215	r_error =0.000000 	i_error =0.000000 
+Output_Signal[443] = (0.156964, 0.513017	ref=0.156964, 0.513017	r_error =0.000000 	i_error =0.000000 
+Output_Signal[444] = (0.155064, 0.522089	ref=0.155063, 0.522090	r_error =0.000001 	i_error =0.000001 
+Output_Signal[445] = (0.153071, 0.531446	ref=0.153070, 0.531446	r_error =0.000001 	i_error =0.000000 
+Output_Signal[446] = (0.150982, 0.541102	ref=0.150982, 0.541102	r_error =0.000000 	i_error =0.000000 
+Output_Signal[447] = (0.148790, 0.551073	ref=0.148790, 0.551074	r_error =0.000000 	i_error =0.000001 
+Output_Signal[448] = (0.146486, 0.561383	ref=0.146486, 0.561380	r_error =0.000000 	i_error =0.000003 
+Output_Signal[449] = (0.144071, 0.572031	ref=0.144071, 0.572030	r_error =0.000001 	i_error =0.000000 
+Output_Signal[450] = (0.141529, 0.583054	ref=0.141529, 0.583054	r_error =0.000000 	i_error =0.000000 
+Output_Signal[451] = (0.138853, 0.594472	ref=0.138850, 0.594469	r_error =0.000003 	i_error =0.000003 
+Output_Signal[452] = (0.136032, 0.606301	ref=0.136032, 0.606301	r_error =0.000000 	i_error =0.000000 
+Output_Signal[453] = (0.133056, 0.618571	ref=0.133058, 0.618570	r_error =0.000001 	i_error =0.000001 
+Output_Signal[454] = (0.129915, 0.631308	ref=0.129916, 0.631308	r_error =0.000001 	i_error =0.000000 
+Output_Signal[455] = (0.126596, 0.644539	ref=0.126597, 0.644538	r_error =0.000001 	i_error =0.000002 
+Output_Signal[456] = (0.123085, 0.658297	ref=0.123083, 0.658297	r_error =0.000002 	i_error =0.000001 
+Output_Signal[457] = (0.119362, 0.672619	ref=0.119362, 0.672620	r_error =0.000000 	i_error =0.000000 
+Output_Signal[458] = (0.115417, 0.687541	ref=0.115417, 0.687541	r_error =0.000000 	i_error =0.000000 
+Output_Signal[459] = (0.111226, 0.703104	ref=0.111227, 0.703103	r_error =0.000000 	i_error =0.000001 
+Output_Signal[460] = (0.106768, 0.719355	ref=0.106768, 0.719356	r_error =0.000000 	i_error =0.000002 
+Output_Signal[461] = (0.102028, 0.736344	ref=0.102027, 0.736342	r_error =0.000000 	i_error =0.000002 
+Output_Signal[462] = (0.096968, 0.754121	ref=0.096968, 0.754121	r_error =0.000000 	i_error =0.000000 
+Output_Signal[463] = (0.091565, 0.772754	ref=0.091565, 0.772754	r_error =0.000001 	i_error =0.000000 
+Output_Signal[464] = (0.085788, 0.792309	ref=0.085789, 0.792308	r_error =0.000001 	i_error =0.000000 
+Output_Signal[465] = (0.079596, 0.812855	ref=0.079597, 0.812855	r_error =0.000000 	i_error =0.000000 
+Output_Signal[466] = (0.072952, 0.834484	ref=0.072952, 0.834483	r_error =0.000000 	i_error =0.000000 
+Output_Signal[467] = (0.065808, 0.857286	ref=0.065810, 0.857285	r_error =0.000002 	i_error =0.000001 
+Output_Signal[468] = (0.058110, 0.881364	ref=0.058109, 0.881365	r_error =0.000001 	i_error =0.000001 
+Output_Signal[469] = (0.049798, 0.906840	ref=0.049798, 0.906842	r_error =0.000000 	i_error =0.000002 
+Output_Signal[470] = (0.040805, 0.933849	ref=0.040805, 0.933850	r_error =0.000000 	i_error =0.000000 
+Output_Signal[471] = (0.031049, 0.962539	ref=0.031051, 0.962539	r_error =0.000001 	i_error =0.000000 
+Output_Signal[472] = (0.020442, 0.993086	ref=0.020440, 0.993087	r_error =0.000002 	i_error =0.000002 
+Output_Signal[473] = (0.008874, 1.025693	ref=0.008874, 1.025694	r_error =0.000000 	i_error =0.000000 
+Output_Signal[474] = (-0.003774, 1.060586	ref=-0.003774, 1.060586	r_error =0.000000 	i_error =0.000000 
+Output_Signal[475] = (-0.017649, 1.098033	ref=-0.017650, 1.098033	r_error =0.000001 	i_error =0.000000 
+Output_Signal[476] = (-0.032922, 1.138349	ref=-0.032922, 1.138348	r_error =0.000000 	i_error =0.000001 
+Output_Signal[477] = (-0.049792, 1.181898	ref=-0.049793, 1.181897	r_error =0.000001 	i_error =0.000002 
+Output_Signal[478] = (-0.068503, 1.229112	ref=-0.068503, 1.229112	r_error =0.000000 	i_error =0.000000 
+Output_Signal[479] = (-0.089343, 1.280513	ref=-0.089342, 1.280511	r_error =0.000001 	i_error =0.000002 
+Output_Signal[480] = (-0.112665, 1.336722	ref=-0.112667, 1.336721	r_error =0.000002 	i_error =0.000001 
+Output_Signal[481] = (-0.138909, 1.398495	ref=-0.138909, 1.398495	r_error =0.000000 	i_error =0.000000 
+Output_Signal[482] = (-0.168599, 1.466764	ref=-0.168599, 1.466764	r_error =0.000000 	i_error =0.000000 
+Output_Signal[483] = (-0.202411, 1.542685	ref=-0.202410, 1.542686	r_error =0.000001 	i_error =0.000000 
+Output_Signal[484] = (-0.241192, 1.627711	ref=-0.241192, 1.627711	r_error =0.000000 	i_error =0.000000 
+Output_Signal[485] = (-0.286038, 1.723703	ref=-0.286039, 1.723704	r_error =0.000001 	i_error =0.000002 
+Output_Signal[486] = (-0.338376, 1.833079	ref=-0.338376, 1.833080	r_error =0.000000 	i_error =0.000001 
+Output_Signal[487] = (-0.400116, 1.959038	ref=-0.400114, 1.959038	r_error =0.000001 	i_error =0.000000 
+Output_Signal[488] = (-0.473846, 2.105920	ref=-0.473846, 2.105918	r_error =0.000000 	i_error =0.000001 
+Output_Signal[489] = (-0.563195, 2.279746	ref=-0.563194, 2.279746	r_error =0.000000 	i_error =0.000000 
+Output_Signal[490] = (-0.673374, 2.489155	ref=-0.673374, 2.489155	r_error =0.000000 	i_error =0.000000 
+Output_Signal[491] = (-0.812158, 2.746984	ref=-0.812159, 2.746985	r_error =0.000001 	i_error =0.000001 
+Output_Signal[492] = (-0.991689, 3.073203	ref=-0.991688, 3.073203	r_error =0.000001 	i_error =0.000000 
+Output_Signal[493] = (-1.231980, 3.500663	ref=-1.231985, 3.500663	r_error =0.000005 	i_error =0.000000 
+Output_Signal[494] = (-1.568563, 4.087563	ref=-1.568562, 4.087563	r_error =0.000001 	i_error =0.000000 
+Output_Signal[495] = (-2.071052, 4.947774	ref=-2.071051, 4.947772	r_error =0.000001 	i_error =0.000002 
+Output_Signal[496] = (-2.896855, 6.338507	ref=-2.896853, 6.338506	r_error =0.000002 	i_error =0.000001 
+Output_Signal[497] = (-4.492996, 8.989784	ref=-4.492994, 8.989782	r_error =0.000001 	i_error =0.000002 
+Output_Signal[498] = (-8.828650, 16.116461	ref=-8.828648, 16.116459	r_error =0.000003 	i_error =0.000002 
+Output_Signal[499] = (-62.897621, 104.432327	ref=-62.897606, 104.432327	r_error =0.000015 	i_error =0.000000 
+Output_Signal[500] = (14.142126, -21.271458	ref=14.142125, -21.271458	r_error =0.000001 	i_error =0.000000 
+Output_Signal[501] = (6.777478, -9.187464	ref=6.777475, -9.187463	r_error =0.000003 	i_error =0.000001 
+Output_Signal[502] = (4.641603, -5.633628	ref=4.641602, -5.633628	r_error =0.000001 	i_error =0.000000 
+Output_Signal[503] = (3.635075, -3.917236	ref=3.635073, -3.917235	r_error =0.000002 	i_error =0.000001 
+Output_Signal[504] = (3.057150, -2.893504	ref=3.057149, -2.893505	r_error =0.000001 	i_error =0.000001 
+Output_Signal[505] = (2.688520, -2.203374	ref=2.688519, -2.203372	r_error =0.000001 	i_error =0.000001 
+Output_Signal[506] = (2.438663, -1.697790	ref=2.438663, -1.697790	r_error =0.000000 	i_error =0.000000 
+Output_Signal[507] = (2.263624, -1.303427	ref=2.263623, -1.303427	r_error =0.000001 	i_error =0.000000 
+Output_Signal[508] = (2.139701, -0.979649	ref=2.139700, -0.979649	r_error =0.000001 	i_error =0.000000 
+Output_Signal[509] = (2.053237, -0.701720	ref=2.053238, -0.701717	r_error =0.000001 	i_error =0.000003 
+Output_Signal[510] = (1.996092, -0.453266	ref=1.996092, -0.453266	r_error =0.000000 	i_error =0.000000 
+Output_Signal[511] = (1.963484, -0.222482	ref=1.963484, -0.222482	r_error =0.000000 	i_error =0.000000 
+Real error = 0.000001
+Imag error = 0.000001
